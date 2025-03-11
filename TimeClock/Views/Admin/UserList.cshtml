@@ -1,0 +1,148 @@
+﻿@model IEnumerable<TimeClock.ViewModel.VMEmployee>
+@{
+    ViewData["Title"] = "Employee List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="body-wrapper-admin">
+    
+    @await Html.PartialAsync("_HeaderNav")
+
+<!-- END HEADER -->
+<!-- MAIN CONTENT -->
+
+    <div class="userlist-wrapper">
+        <h1 class="userlist-header">
+            User List
+        </h1>
+
+        <div class="userlist-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee Id</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>10001</td>
+                        <td>Dela Cruz, Juan</td>
+                        <td>Admin</td>
+                        <td>testing@email.com</td>
+                        <td>
+                            <div class="userlist-btn-div">
+                                <button class="userlist-edit">edit</button>
+                                <button class="userlist-delete delete-btn">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>10001</td>
+                        <td>Dela Cruz, Juan</td>
+                        <td>Admin</td>
+                        <td>testing@email.com</td>
+                        <td>
+                            <div class="userlist-btn-div">
+                                <button class="userlist-edit">edit</button>
+                                <button class="userlist-delete  delete-btn">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>10001</td>
+                        <td>Dela Cruz, Juan</td>
+                        <td>Admin</td>
+                        <td>testing@email.com</td>
+                        <td>
+                            <div class="userlist-btn-div">
+                                <button class="userlist-edit">edit</button>
+                                <button class="userlist-delete  delete-btn">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>10001</td>
+                        <td>Dela Cruz, Juan</td>
+                        <td>Admin</td>
+                        <td>testing@email.com</td>
+                        <td>
+                            <div class="userlist-btn-div">
+                                <button class="userlist-edit">edit</button>
+                                <button class="userlist-delete  delete-btn">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <!-- EDIT USER MODAL -->
+    <div class="edit-user-modal" id="edit-user-modal">
+        <div class="edit-user-content">
+            <span class="close">&times;</span>
+            <h1>Edit User</h1>
+            <h2>Dela Cruz, Juan</h2>
+            <form action="">
+                <label for="username">Username</label>
+                <input type="text" value="jdelacruz" disabled>
+                <label for="role">Role</label>
+                <select name="role" id="">
+                    <option value="admin" selected disabled>Admin</option>
+                    <option value="admin">Admin</option>
+                    <option value="employee">Employee</option>
+                </select>
+                <label for="email">Email</label>
+                <input type="email">
+                <input type="submit" class="edit-user-submit">
+            </form>
+        </div>
+    </div>
+    <!-- END EDIT USER MODAL -->
+    <!-- DELETE CONF MODAL -->
+
+    <div class="deleteModal" id="deleteModal">
+        <div class="delModalContent">
+            <span class="close">&times;</span>
+            <h1>Delete User</h1>
+            <h2>Are you sure you want to delete?</h2>
+            <p>Dela Cruz, Juan</p>
+
+            <div class="del-btn">
+                <input type="submit" value="Yes" class="del-confirm">
+                <button class="del-close">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- END DELETE CONF MODAL -->
+
+<!-- END MAIN CONTENT -->
+</div>
+

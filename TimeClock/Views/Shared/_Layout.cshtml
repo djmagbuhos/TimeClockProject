@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete" />
+    <script src="~/js/rtclock.js"></script>
+    <script src="~/js/moreNav.js"></script>
+    <script src="~/js/timeModal.js"></script>
+    <script src="~/js/site.js"></script>
+    <title>Time Clock</title>
+</head>
+<body>
+    <div class="ml-puzzle-img">
+        <img src="~/img/left-puzzle1.png" class="ml-left-puzzle" alt="">
+        <img src="~/img/right-puzzle1.png" class="ml-right-puzzle" alt="">
+    </div>
+
+
+    @RenderBody()
+    <footer class="ml-footer">
+        <p>&copy; 2024 - Everyeight Company - <a href="#">Contact Us</a></p>
+    </footer>
+
+    <!-- XS BOT NAV -->
+    <div class="navmore-container">
+        <div class="close-nmcontainer"><strong>X</strong></div>
+        <ul class="navmorelist">
+            <li class="myrec-list"><a href="">My Time Record</a></li>
+            <ul class="navadmin-list">
+                <h1>Admin</h1>
+                <li><a asp-controller="Admin" asp-action="RecordList">Record List</a></li>
+                <li><a asp-controller="Admin" asp-action="EmployeeList">Employees</a></li>
+                <li><a asp-controller="Admin" asp-action="AddEmployee">Add Employee</a></li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="nav-xs">
+        <div class="nav-xs-icons">
+            <a asp-controller="Employee" asp-action="Index"><img src="~/img/icons/show-all.png" class="show-all-ia" alt="show logs logo"></a>
+            <a asp-controller="Admin" asp-action="Index"><img src="~/img/icons/home.png" class="home-a" alt="home logo"></a>
+            <button class="more-opt-btn"><img src="~/img/icons/more.png" class="show-more-ia" alt="show more"></button>
+        </div>
+    </div>
+    <!-- END XS BOT NAV -->
+</body>
+</html>

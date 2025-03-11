@@ -1,0 +1,38 @@
+﻿<header class="li-showrec-xs">
+    <img src="~/img/banner-rest.jpg" class="banner-rest" alt="Everyeight logo">
+</header>
+
+<header class="li-home-ml">
+    <!-- ml header -->
+    <img src="~/img/ee-logo.png" class="ee-logo-ml" alt="Everyeight logo">
+    <span class="ml-logo-text">Everyeight</span>
+
+</header>
+
+<nav class="clearfix ml-navbar">
+    <ul class="ml-nav-ul">
+        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li><a asp-controller="Employee" asp-action="Index">Time Record</a></li>
+        <li>
+            Admin
+            <ul>
+                <li><a asp-controller="Admin" asp-action="RecordList">Record List</a></li>
+                <li><a asp-controller="Admin" asp-action="EmployeeList">Employees</a></li>
+                <li><a asp-controller="Admin" asp-action="AddEmployee">Add Employee</a></li>
+                <li><a asp-controller="Admin" asp-action="AddUser">Add User</a></li>
+                <li><a asp-controller="Admin" asp-action="Userlist">List of Users</a></li>
+            </ul>
+        </li>
+        <div class="nav-userdiv">
+        <li>
+            <span class="nav-loggeduser">
+                Juan Dela Cruz<span></span>Web Developer
+            </span>
+            <ul>
+                <li><a href="">My Time Record</a></li>
+                <li><a href="">Logout</a></li>
+            </ul>
+        </li>
+        </div>
+    </ul>
+</nav>

@@ -1,0 +1,169 @@
+﻿@model IEnumerable<TimeClock.ViewModel.VMEmployee>
+
+@{
+    ViewData["Title"] = "Employee List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="body-wrapper-admin">
+    
+    @await Html.PartialAsync("_HeaderNav")
+
+    <!-- END HEADER -->
+    <!-- MAIN CONTENT -->
+    <div class="emplist-wrapper">
+        <h1 class="el-header">
+            Employee List
+        </h1>
+
+        <div class="elist-container">
+            @foreach (var item in Model)
+            {
+                <div class="emplist-div">
+                    <fieldset>
+                        <div class="el-img-div">
+                            @{
+                                var profilePictureSrc = item.ProfilePicture != null
+                                ? "data:image/jpeg;base64," + Convert.ToBase64String(item.ProfilePicture)
+                                : "/img/default-user.jpg";
+                            }
+                            <img src="@profilePictureSrc" class="el-img" />
+                        </div>
+                        <div class="el-details">
+                            <p class="el-id">Employee Id: @Html.DisplayFor(modelItem => item.Id)</p>
+                            <p class="el-name" title="@Html.DisplayFor(modelItem => item.EmployeeName)">@Html.DisplayFor(modelItem => item.EmployeeName)</p>
+                            <p class="el-pos">@Html.DisplayFor(modelItem => item.PositionName)</p>
+                            <div class="el-btn-div">
+                                <div class="el-view-container">
+                                    <button class="el-view-btn"
+                                            data-id="@item.Id"
+                                            data-firstname="@item.FirstName"
+                                            data-lastname="@item.LastName"
+                                            data-position="@item.PositionName"
+                                            data-dob="@item.DateOfBirth.ToString("yyyy-MM-dd")"
+                                            data-gender="@item.Gender"
+                                            data-pfp=@profilePictureSrc>
+                                        View Profile
+                                    </button>
+                                </div>
+                                <div class="el-del-container">
+                                    <button class="el-del-btn delete-btn"
+                                            data-id="@item.Id"
+                                            data-firstname="@item.FirstName"
+                                            data-lastname="@item.LastName">
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- END MAIN CONTENT -->
+</div>
+
+<div id="viewprofile" class="viewprofile">
+    <div class="viewprofile-content">
+        <div class="vp-content">
+            <span class="close">&times;</span>
+            <div class="vp-imgdiv">
+                <img src="/img/default-user.jpg" alt="" class="vp-img">
+            </div>
+            <p><strong>Employee Number</strong></p>
+            <p class="vp-id"></p>
+            <br />
+
+            <p><strong>First Name</strong></p>
+            <p class="vp-firstname"></p>
+            <br />
+
+            <p><strong>Last Name</strong></p>
+            <p class="vp-lastname"></p>
+            <br />
+
+            <p><strong>Position</strong></p>
+            <p class="vp-position"></p>
+            <br />
+
+            <p><strong>Date of Birth</strong></p>
+            <p class="vp-dob"></p>
+            <br />
+
+            <p><strong>Gender</strong></p>
+            <p class="vp-gender"></p>
+            <br />
+
+
+            <div class="vp-btn">
+                <button class="vp-edit">Edit</button>
+                <button class="vp-close">Close</button>
+            </div>
+        </div>
+
+        <div class="vp-edit-container">
+            <span class="close">&times;</span>
+            <form asp-action="UpdateEmployee" asp-controller="Admin" method="post" enctype="multipart/form-data">
+                <div class="vp-imgdiv">
+                    <img id="vp-img" src="/img/default-user.jpg" alt="Profile Picture" class="vp-img">
+                </div>
+
+                <div class="vp-upload-div">
+                    <input type="file" class="vp-file" name="ProfilePicture" id="edit-pfp-file">
+                </div>
+
+                <p>Employee Number: <span class="vp-id"></span></p>
+
+                <input type="hidden" name="Id" class="vp-id-input" id="editempid">
+                <br />
+
+                <label for="firstname">First Name</label>
+                <input type="text" name="FirstName">
+
+                <label for="lastname">Last Name</label>
+                <input type="text" name="LastName">
+
+                <label for="PositionID">Position</label>
+                <select name="PositionID">
+                    @foreach (var pos in ViewBag.Positions)
+                    {
+                        <option value="@pos.Id">@pos.description</option>
+                    }
+                </select>
+
+                <label for="DateOfBirth">Date of Birth</label>
+                <input type="date" name="DateOfBirth">
+
+                <label for="Gender">Gender</label>
+                <select name="Gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <div class="vp-btn">
+                    <input type="submit" value="Save" class="vp-editsave">
+                    <button type="button" class="vp-close">Close</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- DELETE MODAL -->
+<div class="deleteModal" id="deleteModal">
+    <div class="delModalContent">
+        <span class="close">&times;</span>
+        <h1>Delete Employee</h1>
+        <h2>Are you sure you want to delete?</h2>
+        <h2 class="del-empname"></h2>
+
+        <div class="del-btn">
+            <input type="submit" value="Yes" class="del-confirm">
+            <button class="del-close">No</button>
+        </div>
+    </div>
+</div>

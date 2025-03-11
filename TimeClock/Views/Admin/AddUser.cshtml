@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TimeClock.ViewModel.VMEmployee>
+
+<div class="body-wrapper-admin">
+    
+    @await Html.PartialAsync("_HeaderNav")
+
+    <!-- END HEADER -->
+    <!-- MAIN CONTENT -->
+    <div class="addemp-wrapper">
+        <h1 class="addemp-header">
+            Add User
+        </h1>
+        <fieldset>
+            <form action="">
+                <label for="empnumber" class="enlabel">Employee Number: </label>
+                <input type="number" class="addemp-inputtx">
+                <label for="username">Username: </label>
+                <input type="text" class="addemp-inputtx">
+                <label for="password">Password </label>
+                <input type="password" class="addemp-inputtx">
+                <label for="con_password">Confirm Password </label>
+                <input type="password" class="addemp-inputtx">
+                <label for="email">Email</label>
+                <input type="email" class="addemp-inputtx">
+                <label for="role">Role</label>
+                <select name="role" id="">
+                    <option value="admin">Admin</option>
+                    <option value="employee">Employee</option>
+                </select>
+                <div class="ae-submit-div">
+                    <input type="submit" class="ae-submit">
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+    <!-- END MAIN CONTENT -->
+</div>
+
+<footer class="ml-footer">
+    <p>&copy; 2024 - Everyeight Company - <a href="#">Contact Us</a></p>
+</footer>

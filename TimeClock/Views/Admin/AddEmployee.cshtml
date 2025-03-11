@@ -1,0 +1,50 @@
+﻿@model IEnumerable<TimeClock.ViewModel.VMPosition>
+
+<div class="body-wrapper-admin">
+
+    @await Html.PartialAsync("_HeaderNav")
+
+    <!-- END HEADER -->
+    <!-- MAIN CONTENT -->
+    
+    <div class="addemp-wrapper">
+        <h1 class="addemp-header">
+            Add Employee
+        </h1>
+        <fieldset>
+            <form asp-action="AddEmployee" asp-controller="Admin" method="post" enctype="multipart/form-data">
+                <div class="ae-img-container">
+                    <div class="ae-img-div">
+                        <img id="imgPreview" src="~/img/default-user.jpg" class="ae-img" alt="Profile Picture">
+                    </div>
+                    <div class="ae-upload-div">
+                        <input type="file" class="ae-file" name="ProfilePicture" id="fileInput" accept="image/*">
+                    </div>
+                </div>
+                <label for="firstname">First Name: </label>
+                <input type="text" class="addemp-inputtx" name="FirstName" required>
+                <label for="lastname">Last Name: </label>
+                <input type="text" class="addemp-inputtx" name="LastName" required>
+                <label for="Gender">Gender</label>
+                <select name="Gender" id="">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <label for="PositionID">Position</label>
+                <select name="PositionID" required>
+                    @foreach (var p in Model)
+                    {
+                        <option value="@p.Id">@p.description</option>
+                    }
+                </select>
+                <label for="dateofbirth">Date of Birth</label>
+                <input type="date" class="addemp-input" name="DateOfBirth" required>
+                <div class="ae-submit-div">
+                    <input type="submit" class="ae-submit" value="Add Employee">
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+    <!-- END MAIN CONTENT -->
+</div>

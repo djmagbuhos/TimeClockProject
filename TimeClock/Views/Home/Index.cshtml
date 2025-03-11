@@ -1,0 +1,82 @@
+﻿<!-- HEADER -->
+<div class="body-wrapper">
+
+    @await Html.PartialAsync("_HeaderNav")
+    
+
+    <!-- END HEADER -->
+    <!-- MAIN CONTENT -->
+    <div class="home-wrapper">
+        <div class="time-div">
+            <div class="real-time-date"></div>
+            <div class="real-time-clock"></div>
+        </div>
+        <div class="btn-div">
+            <button class="cico-btn">
+                <img src="img/clock-in-btn.jpg" alt="clockin button" class="ci-btn">
+            </button>
+            <button class="cico-btn">
+                <img src="img/clock-out-btn.jpg" alt="clockout button" class="co-btn">
+            </button>
+        </div>
+
+        <div class="home-content">
+            <div class="hc-header">
+                <span class="todayrec-text">Today's Record</span>
+                <span class="show-all-link"><a href="">Show all record</a></span>
+            </div>
+
+            <div class="hc-main">
+                <table class="hc-table">
+                    <tr>
+                        <th>Date</th>
+                        <th>Time In</th>
+                        <th>Time Out</th>
+                        <th>Total</th>
+                    </tr>
+
+                    <tr>
+                        <td>01/01/2000</td>
+                        <td>09:00:00</td>
+                        <td>13:00:00</td>
+                        <td>4</td>
+                    </tr>
+
+                    <tr>
+                        <td>01/01/2000</td>
+                        <td>14:00:00</td>
+                        <td>18:00:00</td>
+                        <td>4</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- END MAIN CONTENT -->
+</div>
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="home-modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Clock In Login</h2>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        <input type="submit" value="Login">
+    </div>
+</div>
+
+<div id="logoutModal" class="home-modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Clock Out Login</h2>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        <input type="submit" value="Login">
+    </div>
+</div>
+<!-- END LOGIN MODAL -->

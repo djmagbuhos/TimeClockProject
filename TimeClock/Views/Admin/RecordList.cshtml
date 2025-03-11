@@ -1,0 +1,243 @@
+﻿
+@model IEnumerable<TimeClock.ViewModel.VMUsers>
+@{
+    ViewData["Title"] = "Employee List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="body-wrapper-admin">
+    
+    @await Html.PartialAsync("_HeaderNav")
+
+    <!-- END HEADER -->
+    <!-- MAIN CONTENT -->
+    <div class="showrec-wrapper">
+        <h1 class="showrec-header">
+             List of Users
+        </h1>
+
+        <div class="sr-filter">
+            <fieldset>
+                <div class="sr-filter-content">
+                    <form action="">
+                        <div class="empid-div">
+                            <label for="empid">
+                                Employee Id:
+                            </label>
+                            <input type="text" class="emp-input-id">
+                        </div>
+                        <br>
+                        Month:
+                        <select name="month" id="">
+                            <option value="all">All</option>
+                            <option value="1">Jan</option>
+                            <option value="2">Feb</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Apr</option>
+                            <option value="5">May</option>
+                            <option value="6">Jun</option>
+                            <option value="7">Jul</option>
+                            <option value="8">Aug</option>
+                            <option value="9">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dec</option>
+                        </select>
+
+                        Day:
+                        <select name="day" id="">
+                            <option value="all">All</option>
+                            <!-- Loop to generate 1-31 -->
+                            <script>
+                                for (let i = 1; i <= 31; i++) {
+                                document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+
+                        Year:
+                        <select name="year" id="">
+                            <!-- Loop to generate years 2025-2030 -->
+                            <script>
+                                for (let i = 2025; i <= 2030; i++) {
+                                document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+
+                        <input type="submit" class="find-id-btn" value="Search">
+                    </form>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="sr-addtime-div">
+            <button class="sr-addtime-btn" id="sr-addtime">
+                Add Time
+            </button>
+        </div>
+
+        <div class="sr-content">
+            <table class="sr-table">
+                <thead>
+                    <tr>
+                        <th><span class="emp-id-table">Id</span></th>
+                        <th>Date</th>
+                        <th>Time In</th>
+                        <th>Time Out</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>01/06/2025</td>
+                            <td>09:00</td>
+                            <td>01:03</td>
+                            <td>04:03</td>
+                            <td>
+                                <div class="rec-btn-div">
+                                    <button class="view-rec-btn">view</button>
+                                    <button class="edit-rec-btn">edit</button>
+                                    <button class="del-rec-btn delete-btn">
+                                        <span class="material-symbols-outlined">
+                                            delete
+                                        </span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- END MAIN CONTENT -->
+</div>
+
+<!-- MODAL SECTION -->
+<!-- VIEW MODAL -->
+<div id="viewModal" class="viewmodal">
+    <div class="view-modal-content">
+        <span class="close">&times;</span>
+        <h2>Juan Dela Cruz</h2>
+        <h3>Date</h3>
+        <p>01/06/2025</p>
+        <h3>Time In</h3>
+        <p>09:00</p>
+        <h3>Time Out</h3>
+        <p>01:03</p>
+        <h3>Total Hours</h3>
+        <p>04:03</p>
+        <h3>Status</h3>
+        <p class="view-status">Approved</p>
+    </div>
+</div>
+
+<!-- EDIT MODAL -->
+
+<div id="editModal" class="edmodal">
+    <div class="ed-modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Time Record</h2>
+        <form action="">
+            <label for="employeename" class="er-empname">
+                Juan Dela Cruz
+            </label>
+            <label for="date">Date</label>
+            <p class="ti-date">01/06/2025</p>
+            <div class="edit-timein">
+                <label for="timein">Time In <span class="ti-guide">(hh:mm)</span></label>
+                <input type="number" min="0" max="24" placeholder="hh">
+                :
+                <input type="number" min="0" max="24" placeholder="mm">
+            </div>
+
+            <div class="edit-timeout">
+                <label for="timein">Time Out <span class="ti-guide">(hh:mm)</span></label>
+                <input type="number" min="0" max="24" placeholder="hh">
+                :
+                <input type="number" min="0" max="24" placeholder="mm">
+            </div>
+
+            <div class="edit-status">
+                <label for="status">Status</label>
+                <select name="status" id="">
+                    <option value="">Approved</option>
+                    <option value="">Rejected</option>
+                    <option value="" selected>NA</option>
+                </select>
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+</div>
+
+<!-- DELETE MODAL -->
+
+<div class="deleteModal" id="deleteModal">
+    <div class="delModalContent">
+        <span class="close">&times;</span>
+        <h1>Delete Record</h1>
+        <h2>Are you sure you want to delete?</h2>
+        <h3>
+            Dela Cruz, Juan</h2>
+            <p>Date: 01/01/2000</p>
+            <p>Time In: 01:00</p>
+            <p>Time Out: 02:00</p>
+
+            <div class="del-btn">
+                <input type="submit" value="Yes" class="del-confirm">
+                <button class="del-close">No</button>
+            </div>
+    </div>
+</div>
+
+<!-- ADD MODAL -->
+<div id="addModal" class="addmodal">
+    <div class="addmodal-content">
+        <span class="close">&times;</span>
+        <h2>Add Time to Employee</h2>
+        <form action="">
+            <label for="employeeid">Select an Employee</label>
+            <select name="employeeid" id="">
+                <option value="">Employee One</option>
+                <option value="">Employee Two</option>
+                <option value="">Employee Three</option>
+            </select>
+
+            <label for="date">Date</label>
+            <input type="date">
+
+            <div class="add-timein">
+                <label for="timein">Time In <span class="ti-guide">(hh:mm)</span></label>
+                <input type="number" min="0" max="24" placeholder="hh">
+                :
+                <input type="number" min="0" max="24" placeholder="mm">
+            </div>=][]
+
+
+
+
+            <div class="add-timeout">
+                <label for="timein">Time Out <span class="ti-guide">(hh:mm)</span></label>
+                <input type="number" min="0" max="24" placeholder="hh">
+                :
+                <input type="number" min="0" max="24" placeholder="mm">
+            </div>
+
+            <div class="add-status">
+                <label for="status">Status</label>
+                <select name="status" id="">
+                    <option value="">Approved</option>
+                    <option value="">Rejected</option>
+                    <option value="" selected>NA</option>
+                </select>
+            </div>
+
+            <input type="submit">
+        </form>
+    </div>
+</div>
+<!-- END ADD MODAL -->

@@ -1,0 +1,396 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\models\\timelogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\models\\timelogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\wwwroot\\js\\timemodal.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\wwwroot\\js\\timemodal.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\views\\admin\\recordlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\views\\admin\\recordlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\services\\dataaccessservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\services\\dataaccessservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\viewmodel\\vmtimelogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\viewmodel\\vmtimelogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\models\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\models\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\views\\admin\\employeelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\views\\admin\\employeelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\views\\admin\\addemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\views\\admin\\addemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\models\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\models\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\viewmodel\\vmposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\viewmodel\\vmposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\viewmodel\\vmemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\viewmodel\\vmemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\models\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\models\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\viewmodel\\vmroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\viewmodel\\vmroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\viewmodel\\vmstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\viewmodel\\vmstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\viewmodel\\vmusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\viewmodel\\vmusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\migrations\\20250307092350_addpfpinemployeecs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\migrations\\20250307092350_addpfpinemployeecs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|c:\\users\\manil\\onedrive\\documents\\timeclockproject\\timeclock\\migrations\\20250310044548_updatedobinemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE51D86-CCBE-4AE5-8E58-E70CAB21300B}|TimeClock\\TimeClock.csproj|solutionrelative:timeclock\\migrations\\20250310044548_updatedobinemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RecordList.cshtml",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Views\\Admin\\RecordList.cshtml",
+              "RelativeDocumentMoniker": "TimeClock\\Views\\Admin\\RecordList.cshtml",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Views\\Admin\\RecordList.cshtml",
+              "RelativeToolTip": "TimeClock\\Views\\Admin\\RecordList.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAIMAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-27T06:59:04.277Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "timeModal.js",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\js\\timeModal.js",
+              "RelativeDocumentMoniker": "TimeClock\\wwwroot\\js\\timeModal.js",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\js\\timeModal.js",
+              "RelativeToolTip": "TimeClock\\wwwroot\\js\\timeModal.js",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAYwN8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-03-10T07:33:09.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "TimeClock\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "TimeClock\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAIwIsAAAB+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T06:38:03.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "VMPosition.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\ViewModel\\VMPosition.cs",
+              "RelativeDocumentMoniker": "TimeClock\\ViewModel\\VMPosition.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\ViewModel\\VMPosition.cs",
+              "RelativeToolTip": "TimeClock\\ViewModel\\VMPosition.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T06:52:45.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "TimeClock\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\Employee.cs",
+              "RelativeToolTip": "TimeClock\\Models\\Employee.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T06:46:21.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Position.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\Position.cs",
+              "RelativeDocumentMoniker": "TimeClock\\Models\\Position.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\Position.cs",
+              "RelativeToolTip": "TimeClock\\Models\\Position.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T06:48:27.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AddEmployee.cshtml",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Views\\Admin\\AddEmployee.cshtml",
+              "RelativeDocumentMoniker": "TimeClock\\Views\\Admin\\AddEmployee.cshtml",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Views\\Admin\\AddEmployee.cshtml",
+              "RelativeToolTip": "TimeClock\\Views\\Admin\\AddEmployee.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-10T06:09:19.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataAccessService.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Services\\DataAccessService.cs",
+              "RelativeDocumentMoniker": "TimeClock\\Services\\DataAccessService.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Services\\DataAccessService.cs",
+              "RelativeToolTip": "TimeClock\\Services\\DataAccessService.cs",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAQwIsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T07:31:09.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "TimeClock\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "TimeClock\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-03-10T07:53:52.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TimeLogs.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\TimeLogs.cs",
+              "RelativeDocumentMoniker": "TimeClock\\Models\\TimeLogs.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\TimeLogs.cs",
+              "RelativeToolTip": "TimeClock\\Models\\TimeLogs.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T08:51:17.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Status.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\Status.cs",
+              "RelativeDocumentMoniker": "TimeClock\\Models\\Status.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\Status.cs",
+              "RelativeToolTip": "TimeClock\\Models\\Status.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T06:48:56.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VMTimeLogs.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\ViewModel\\VMTimeLogs.cs",
+              "RelativeDocumentMoniker": "TimeClock\\ViewModel\\VMTimeLogs.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\ViewModel\\VMTimeLogs.cs",
+              "RelativeToolTip": "TimeClock\\ViewModel\\VMTimeLogs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T08:59:34.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EmployeeList.cshtml",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Views\\Admin\\EmployeeList.cshtml",
+              "RelativeDocumentMoniker": "TimeClock\\Views\\Admin\\EmployeeList.cshtml",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Views\\Admin\\EmployeeList.cshtml",
+              "RelativeToolTip": "TimeClock\\Views\\Admin\\EmployeeList.cshtml",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAAAKkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-10T07:21:45.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "VMEmployee.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\ViewModel\\VMEmployee.cs",
+              "RelativeDocumentMoniker": "TimeClock\\ViewModel\\VMEmployee.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\ViewModel\\VMEmployee.cs",
+              "RelativeToolTip": "TimeClock\\ViewModel\\VMEmployee.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAYwB8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T06:51:16.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "20250310044548_updateDOBinEmployee.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Migrations\\20250310044548_updateDOBinEmployee.cs",
+              "RelativeDocumentMoniker": "TimeClock\\Migrations\\20250310044548_updateDOBinEmployee.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Migrations\\20250310044548_updateDOBinEmployee.cs",
+              "RelativeToolTip": "TimeClock\\Migrations\\20250310044548_updateDOBinEmployee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T04:45:48.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "TimeClock\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "TimeClock\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T06:41:45.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20250307092350_AddPFPinEmployeeCS.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Migrations\\20250307092350_AddPFPinEmployeeCS.cs",
+              "RelativeDocumentMoniker": "TimeClock\\Migrations\\20250307092350_AddPFPinEmployeeCS.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Migrations\\20250307092350_AddPFPinEmployeeCS.cs",
+              "RelativeToolTip": "TimeClock\\Migrations\\20250307092350_AddPFPinEmployeeCS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T09:23:50.757Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "VMUsers.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\ViewModel\\VMUsers.cs",
+              "RelativeDocumentMoniker": "TimeClock\\ViewModel\\VMUsers.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\ViewModel\\VMUsers.cs",
+              "RelativeToolTip": "TimeClock\\ViewModel\\VMUsers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T06:53:18.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "VMRoles.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\ViewModel\\VMRoles.cs",
+              "RelativeDocumentMoniker": "TimeClock\\ViewModel\\VMRoles.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\ViewModel\\VMRoles.cs",
+              "RelativeToolTip": "TimeClock\\ViewModel\\VMRoles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T06:52:51.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "TimeClock\\Models\\Users.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\Users.cs",
+              "RelativeToolTip": "TimeClock\\Models\\Users.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T06:49:56.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "styles.css",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\css\\styles.css",
+              "RelativeDocumentMoniker": "TimeClock\\wwwroot\\css\\styles.css",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\css\\styles.css",
+              "RelativeToolTip": "TimeClock\\wwwroot\\css\\styles.css",
+              "ViewState": "AgIAAM4HAAAAAAAAAAAgwPUHAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-03-06T08:37:02.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Roles.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\Roles.cs",
+              "RelativeDocumentMoniker": "TimeClock\\Models\\Roles.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\Models\\Roles.cs",
+              "RelativeToolTip": "TimeClock\\Models\\Roles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T06:48:49.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "VMStatus.cs",
+              "DocumentMoniker": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\ViewModel\\VMStatus.cs",
+              "RelativeDocumentMoniker": "TimeClock\\ViewModel\\VMStatus.cs",
+              "ToolTip": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\ViewModel\\VMStatus.cs",
+              "RelativeToolTip": "TimeClock\\ViewModel\\VMStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T09:10:24.452Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+
+
+add-migration init_sqlLite -context ApplicationDbContext
+update-database -context ApplicationDbContext
+
+
+insert into "Employee" ("FirstName","LastName")
+values
+("Juan", "dela Cruz1"),
+("Juan", "dela Cruz2"),
+("Juan", "dela Cruz3"),
+("Juan", "dela Cruz4")
+
+
