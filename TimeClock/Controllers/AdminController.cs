@@ -1,5 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Globalization;
+using System.Security.Cryptography;
+using System.Text;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using TimeClock.Models;
 using TimeClock.Services;
 using TimeClock.ViewModel;
 
@@ -10,36 +15,135 @@ namespace TimeClock.Controllers
         private readonly ILogger<EmployeeController> _logger;
         private readonly IDataAccessService _dataAccessService;
         private readonly IConfiguration _configuration;
+        private readonly ApplicationDbContext _context;
+
+
+
 
         public AdminController(
             IConfiguration configuration,
             IDataAccessService dataAccessService,
-            ILogger<EmployeeController> logger)
+            ILogger<EmployeeController> logger,
+            ApplicationDbContext context)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _dataAccessService = dataAccessService ?? throw new ArgumentNullException(nameof(dataAccessService));
             this._configuration = configuration;
-
+            _context = context;
         }
 
-        public IActionResult RecordList()
+        //--------------- RECORD LIST (ADMIN) --------------------------//
+
+        [HttpGet]
+        public async Task<IActionResult> RecordList(string EmpId, string month, string day, string year)
         {
-            //var data = _dataAccessService.GetAllUsersAsync();
-
-            return View();
+            var timeLogs = await _dataAccessService.GetAllTimeLogsAsync(EmpId, month, day, year);
+            ViewData["EmpId"] = EmpId;
+            ViewBag.Status = await _dataAccessService.GetAllStatusAsync();
+            ViewBag.Employee = await _dataAccessService.GetAllEmployeeAsync();
+            return View(timeLogs);
         }
 
-        public IActionResult AddUser()
+        [HttpPost]
+        public async Task<IActionResult> AddTimeLogs([FromBody] VMTimeLogs model)
         {
-            return View();
+            bool isSuccess = await _dataAccessService.AddTimeLogs(model);
+
+            if (isSuccess)
+            {
+                return Json(new { redirectUrl = Url.Action("RecordList", "Admin") });
+            }
+            else
+            {
+                return BadRequest(new { message = "Time Out must be greater than Time In." });
+            }
         }
 
-        public IActionResult UserList()
+        [HttpPost]
+        public async Task<IActionResult> EditTimeLogs(EditTimeLogVM model)
         {
-            return View();
+            Console.WriteLine($"Received: Id={model.Id}, TimeIN={model.TimeIN}, TimeOUT={model.TimeOUT}, StatusID={model.StatusID}");
+
+            if (ModelState.IsValid)
+            {
+                bool isSuccess = await _dataAccessService.UpdateTimeLogs(model);
+                return isSuccess ? Json(new { success = true }) : BadRequest(new { message = "error on updating data" });
+            }
+            else
+            {
+                // Send back detailed validation errors
+                var errors = ModelState.ToDictionary(
+                    kvp => kvp.Key,
+                    kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToArray()
+                );
+                return BadRequest(errors);
+            }
         }
 
+        [HttpPost]
+        public async Task<IActionResult> DeleteTimeLog(int id)
+        {
+            var timeLog = await _context.TimeLogs.FindAsync(id);
 
+            if (timeLog == null)
+            {
+                return NotFound(new { message = "Time log not found." });
+            }
+
+            _context.TimeLogs.Remove(timeLog);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Time log deleted successfully." });
+        }
+
+        //---------------------------------------------------------------------//
+        //---------------------------------------------------------------------//
+
+
+        //---------------------------------------------------------------------//
+        //------------------------ USER ---------------------------------------//
+        [HttpGet]
+        public async Task<IActionResult> AddUser()
+        {
+            var roles = await _dataAccessService.GetAllRolesAsync();
+            return View(roles);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddUser([FromBody] VMUsers model)
+        {
+            if (model == null)
+            {
+                return BadRequest("Invalid user data");
+            }
+
+            //HashPassword Before Saving
+            model.PasswordHash = HashPassword(model.PasswordHash);
+
+            var result = await _dataAccessService.AddUsersAsync(model);
+            if (result == null)
+            {
+                return StatusCode(500, "Failed to add user.");
+            }
+
+            return Ok(new { message = "User added successfully!", id = result.Id });
+        }
+        private static string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashBytes = sha256.ComputeHash(bytes);
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+            }
+        }
+
+        //---------------------------------------------------------------------//
+        //---------------------------------------------------------------------//
+
+
+        //---------------------------------------------------------------------//
+        //------------------------ EMPLOYEE -----------------------------------//
         public async Task<IActionResult> EmployeeList()
         {
             var model = await _dataAccessService.GetAllEmployeeAsync();
@@ -48,7 +152,7 @@ namespace TimeClock.Controllers
             if (positions == null || !positions.Any())
             {
                 Console.WriteLine("⚠️ No positions found!");
-                ViewBag.Positions = new List<VMPosition>(); // Avoid null reference
+                ViewBag.Positions = new List<VMPosition>(); 
             }
             else
             {
@@ -61,7 +165,6 @@ namespace TimeClock.Controllers
 
             return View(model);
         }
-
 
         [HttpPost]
         public async Task<IActionResult> UpdateEmployeeAsync(VMEmployee model, IFormFile ProfilePicture)
@@ -76,7 +179,7 @@ namespace TimeClock.Controllers
             }
             else
             {
-                // If no new profile picture is uploaded, retain the current image.
+                // If no new pfp is uploaded, retain the current image.
                 var existingEmployee = await _dataAccessService.GetEmployeeByIdAsync(model.Id);
                 if (existingEmployee != null)
                 {
@@ -115,19 +218,6 @@ namespace TimeClock.Controllers
             return RedirectToAction("EmployeeList", "Admin");
         }
 
-        //private async Task<VMEmployee> AddEmployeeAsync(VMEmployee model)
-        //{
-        //    await _dataAccessService.AddEmployeeAsync(model);
-        //    return model;
-        //}
-
-        //private async Task<VMEmployee> UpdateEmployeeAsync(VMEmployee model)
-        //{
-        //    await _dataAccessService.UpdateEmployeeAsync(model);
-
-        //    return model;
-        //}
-
         public async Task<IActionResult> DeleteEmployee(int id)
         {
             bool isDeleted = await _dataAccessService.DeleteEmployeeAsync(id);
@@ -137,84 +227,9 @@ namespace TimeClock.Controllers
                 return RedirectToAction("EmployeeList", "Admin");
             }
 
-            return RedirectToAction("EmployeeList", "Admin");  // Or return a view with error will add error msg in the future
+            return RedirectToAction("EmployeeList", "Admin");  // will add error msg in the future
         }
-
-
-        private async Task DeleteEmployeeAsync(VMEmployee model)
-        {
-            await _dataAccessService.DeleteEmployeeAsync(model.Id);
-        }
-
-
-        //private VMEmployee AddEmployee(VMEmployee model)
-        //{
-        //    _dataAccessService.AddEmployeeAsync(model);
-        //    return model;
-        //}
-
-
-        private void DeleteEmployee(VMEmployee model)
-        {
-            _dataAccessService.DeleteEmployeeAsync(model.Id);
-        }
-
-
-        //public async Task<IActionResult> Testinglaang()
-        //{
-        //    var vmAddEmployee = new VMEmployee()
-        //    {
-        //        Id = 0,
-        //        FirstName = "Juan 1",
-        //        LastName = "dela Cruz1",
-        //        Gender = "M",
-        //        PositionID = 1,
-        //        DateOfBirth = new DateTime(2000, 02, 28),
-        //        CreatedAt = DateTime.Now
-        //    };
-        //    vmAddEmployee = AddEmployee(vmAddEmployee);
-
-        //    var vmUpdateEmployee = await _dataAccessService.GetEmployeeByIdAsync(vmAddEmployee.Id);
-        //    if (vmUpdateEmployee != null)
-        //    {
-        //        vmUpdateEmployee.FirstName = "Mark";
-        //        vmUpdateEmployee.LastName = "Cortel maraming chicks";
-        //        vmUpdateEmployee.DateOfBirth = new DateTime(2000, 02, 28);
-        //        vmUpdateEmployee = UpdateEmployee(vmUpdateEmployee);
-        //    }
-
-
-        //    var vmDeleteEmployee = await _dataAccessService.GetEmployeeByIdAsync(vmUpdateEmployee.Id);
-        //    if (vmDeleteEmployee != null)
-        //    {
-        //        DeleteEmployee(vmDeleteEmployee);
-        //    }
-
-
-
-        //    var allEmployees = await _dataAccessService.GetAllEmployeeAsync();
-        //    foreach (var emp in allEmployees)
-        //    {
-        //        var employee = await _dataAccessService.GetEmployeeByIdAsync(emp.Id);
-
-        //        var x = employee;
-        //    }
-
-
-        //    var allUsers = await _dataAccessService.GetAllUsersAsync();
-        //    foreach (var item in allUsers)
-        //    {
-        //        var user = await _dataAccessService.GetAllUsersByIdAsync(item.Id);
-
-        //        var y = user;
-        //    }
-
-
-        //    return View(allEmployees);
-        //}
-
-
-
-
+        //--------------------------END OF EMPLOYEE-----------------------------//
+        //---------------------------------------------------------------------//
     }
 }

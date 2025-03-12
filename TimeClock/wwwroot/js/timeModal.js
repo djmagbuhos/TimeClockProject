@@ -99,16 +99,121 @@ $(document).ready(function () {
             $("#viewprofile").fadeOut();
         }
     });
+    var statusId = $(this).data("statusid");
 
-    // EDIT TIME MODAL
+    //-----------DELETE EMPLOYEE MODAL------------------//
+    $("#deleteModal").hide();
+
+    $(".delete-btn").on("click", function () {
+        const employeeId = $(this).attr("data-id");
+        const firstName = $(this).attr("data-firstname");
+        const lastName = $(this).attr("data-lastname");
+        const fullName = lastName + ", " + firstName;
+        $(".del-empname").text(fullName);
+
+        // Save the emp ID
+        $("#deleteModal").data("employee-id", employeeId);
+
+
+        $("#deleteModal").fadeIn();
+    });
+
+
+    $(".close, .del-close").on("click", function () {
+        $("#deleteModal").fadeOut();
+    });
+
+
+    $(window).on("click", function (event) {
+        if ($(event.target).is("#deleteModal")) {
+            $("#deleteModal").fadeOut();
+        }
+    });
+
+    //confirmation of delete
+    $(".del-confirm").on("click", function () {
+        const employeeId = $("#deleteModal").data("employee-id");
+
+        // AJAX request to del the employee
+        $.ajax({
+            url: "/Admin/DeleteEmployee",
+            type: "POST",
+            data: {
+                id: employeeId
+            },
+            success: function (response) {
+
+                $("#deleteModal").fadeOut();
+                window.location.href = "/Admin/EmployeeList";
+            },
+            error: function (xhr, status, error) {
+                // Handle error (if deletion fails)
+                alert("Error deleting employee!");
+                $("#deleteModal").fadeOut();
+            }
+        });
+    });
+
+    //--------------END OF DELETE EMPLOYEE MODAL-----------------//
+
+
+    //----------------- RECORD LIST ADMIN -----------------------//
+    //---------------- EDIT TIME MODAL -------------------- //
+
     $("#editModal").hide();
 
-    $(".edit-rec-btn").on("click", function () {
+    $(document).on("click", ".edit-rec-btn", function () {
+        var id = $(this).data("id");
+        var employeeName = $(this).data("employeename");
+        var logDate = $(this).data("logdate");
+        var timeIn = $(this).data("timein");
+        var timeOut = $(this).data("timeout");
+        // Display only
+        $("#editempname").text(employeeName);
+        $("#editLogDate").text(logDate);
+
+        //value to edit
+        $("#editId").val(id);
+        $("#editTimeIn").val(timeIn);
+        $("#editTimeOut").val(timeOut);
+        $("#editStatusId").val(statusId);
+
         $("#editModal").fadeIn();
     });
 
-    $(".close").on("click", function () {
+    // Close button inside the edit modal
+    $("#editModal .close").on("click", function () {
         $("#editModal").fadeOut();
+    });
+
+    // Close modal when clicking outside
+    $("#editModal").on("click", function (event) {
+        if (event.target == this) {
+            $(this).fadeOut();
+        }
+    });
+
+    $("#editForm").submit(function (e) {
+        e.preventDefault();
+        console.log("Form Data:", formData);
+        var formData = $(this).serialize();
+
+        $.ajax({
+            url: "/Admin/EditTimeLogs",
+            type: "POST",
+            data: formData,
+            success: function (data) {
+                $("#editModal").fadeOut();
+                location.reload(); 
+            },
+            error: function (error) {
+                console.error("Error updating record:", error);
+                alert("An error occurred while updating the record.");
+                console.log("Server Response:", error.responseJSON); // Log the server's response
+            }
+        });
+
+        console.log($("#editId").val());
     });
 
     $(window).on("click", function (event) {
@@ -117,11 +222,77 @@ $(document).ready(function () {
         }
     });
 
-    // ADD TIME MODAL
+    // -------------------END EDIT TIME MODAL---------------------//
+
+
+    //-------------------------------------------------------//
+    // ------------------ADD TIME MODAL----------------------//
     $("#addModal").hide();
 
     $("#sr-addtime").on("click", function () {
         $("#addModal").fadeIn();
+    });
+
+    $('#addTimeForm').submit(function (e) {
+        e.preventDefault();
+
+        var employeeId = parseInt($("#employeeid").val());
+        var logDate = $("#logDate").val();
+        var timeIn = $("#timein").val();
+        var timeOut = $("#timeout").val();
+        var statusId = $("#status").val();
+
+        // Get today's date (YYYY-MM-DD format)
+        var today = new Date().toISOString().split('T')[0];
+
+        // Validate inputs before sending request
+        if (!employeeId || !logDate || !timeIn || !timeOut) {
+            alert("Please fill out all fields.");
+            return;
+        }
+
+        // Ensure logDate is today or in the past
+        if (logDate > today) {
+            alert("Date must be today or before.");
+            return;
+        }
+
+        var timeInDateTime = new Date(logDate + "T" + timeIn + ":00");
+        var timeOutDateTime = new Date(logDate + "T" + timeOut + ":00");
+
+        // Ensure TimeOUT is greater than TimeIN
+        if (timeOutDateTime <= timeInDateTime) {
+            alert("Time Out must be greater than Time In.");
+            return;
+        }
+
+        var timeLogData = {
+            EmpId: employeeId,
+            LogDate: logDate,
+            TimeIN: timeInDateTime.toISOString(),
+            TimeOUT: timeOutDateTime.toISOString(),
+            StatusID: statusId
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/AddTimeLogs",
+            data: JSON.stringify(timeLogData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                if (data.redirectUrl) {
+                    window.location.href = data.redirectUrl;
+                } else {
+                    alert("Time log added successfully!");
+                    $('#addModal').hide();
+                    window.location.reload();
+                }
+            },
+            error: function (xhr) {
+                alert("Error: " + xhr.responseJSON.message);
+            }
+        });
     });
 
     $(".close").on("click", function () {
@@ -134,10 +305,30 @@ $(document).ready(function () {
         }
     });
 
-    // ADD TIME MODAL
+    //------------------END ADD TIME MODAL-------------------//
+
+
+    //------------------VIEW TIME MODAL-----------------------//
     $("#viewModal").hide();
 
     $(".view-rec-btn").on("click", function () {
+        const id = $(this).attr("data-id");
+        const employeeName = $(this).attr("data-employeename");
+        const logDate = $(this).attr("data-logdate");
+        const timeIn = $(this).attr("data-timein");
+        const timeOut = $(this).attr("data-timeout");
+        const total = $(this).attr("data-total");
+        const statusDescription = $(this).attr("data-statusdescription");
+
+        $(".vp-id").text(id);
+        $(".vp-employeename").text(employeeName);
+        $(".vp-logdate").text(logDate);
+        $(".vp-timein").text(timeIn);
+        $(".vp-timeout").text(timeOut);
+        $(".vp-total").text(total);
+        $(".vp-statusdescription").text(statusDescription);
+
+
         $("#viewModal").fadeIn();
     });
 
@@ -150,6 +341,7 @@ $(document).ready(function () {
             $("#viewModal").fadeOut();
         }
     });
+    //---------------------END VIEW TIME MODAL-------------------//
 
     // EDIT USER MODAL
     $("#edit-user-modal").hide();
@@ -168,59 +360,54 @@ $(document).ready(function () {
         }
     });
 
-    //DELETE CONFIRMATION MODAL
-    // DELETE CONFIRMATION MODAL
-    $("#deleteModal").hide();
+    //------------------ DELETE TIME MODAL ----------------------//
 
+    $("#deleteModalRecord").hide();
 
-    $(".delete-btn").on("click", function () {
-        const employeeId = $(this).attr("data-id");
-        const firstName = $(this).attr("data-firstname");
-        const lastName = $(this).attr("data-lastname");
-        const fullName = lastName + ", " + firstName;
-        $(".del-empname").text(fullName);
+    $(".del-rec-btn.delete-btn").on("click", function () { // Corrected class
+        var logId = $(this).data("id");
+        var logDate = $(this).data("logdate");
+        var empName = $(this).data("employeename");
+        var logTimeIn = $(this).data("timein");
+        var logTimeOut = $(this).data("timeout");
 
-        // Save the emp ID
-        $("#deleteModal").data("employee-id", employeeId);
+        $(".del-rec-name").text(empName);
+        $(".dec-rec-date").text(logDate);
+        $(".del-rec-timein").text(logTimeIn);
+        $(".del-rec-timeout").text(logTimeOut);
 
-
-        $("#deleteModal").fadeIn();
+        $("#deleteModalRecord").fadeIn();
+        $("#deleteModalRecord .del-confirm-rec").data("id", logId);
     });
 
- 
+    $(".del-confirm-rec").on("click", function () {
+        var logId = $(this).data("id");
+
+        $.ajax({
+            url: "/Admin/DeleteTimeLog", 
+            type: "POST", 
+            data: { id: logId }, 
+            success: function (response) {
+                alert(response.message); 
+                location.reload(); 
+            },
+            error: function (xhr) {
+                alert("Error deleting record: " + xhr.responseText);
+            }
+        });
+
+        $("#deleteModalRecord").fadeOut(); 
+    });
+
     $(".close, .del-close").on("click", function () {
-        $("#deleteModal").fadeOut();
+        $("#deleteModalRecord").fadeOut();
     });
 
-   
     $(window).on("click", function (event) {
-        if ($(event.target).is("#deleteModal")) {
-            $("#deleteModal").fadeOut();
+        if ($(event.target).is("#deleteModalRecord")) {
+            $("#deleteModalRecord").fadeOut();
         }
     });
 
-    //confirmation of delete
-    $(".del-confirm").on("click", function () {
-        const employeeId = $("#deleteModal").data("employee-id");
-
-        // AJAX request to del the employee
-        $.ajax({
-            url: "/Admin/DeleteEmployee",
-            type: "POST",
-            data: {
-                id: employeeId 
-            },
-            success: function (response) {
-               
-                $("#deleteModal").fadeOut();
-                window.location.href = "/Admin/EmployeeList";  
-            },
-            error: function (xhr, status, error) {
-                // Handle error (if deletion fails)
-                alert("Error deleting employee!");
-                $("#deleteModal").fadeOut();
-            }
-        });
-    });
 
 });

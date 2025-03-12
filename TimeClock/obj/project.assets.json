@@ -5703,11 +5703,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\TimeClock.csproj",
+      "projectUniqueName": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\TimeClock.csproj",
       "projectName": "TimeClock",
-      "projectPath": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\TimeClock.csproj",
+      "projectPath": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\TimeClock.csproj",
       "packagesPath": "C:\\Users\\manil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\obj\\",
+      "outputPath": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

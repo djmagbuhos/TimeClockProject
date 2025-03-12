@@ -1,33 +1,30 @@
-﻿
-@model IEnumerable<TimeClock.ViewModel.VMUsers>
+﻿@model IEnumerable<TimeClock.ViewModel.VMTimeLogs>
 @{
-    ViewData["Title"] = "Employee List";
+    ViewData["Title"] = "Employee Records";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="body-wrapper-admin">
-    
+
     @await Html.PartialAsync("_HeaderNav")
 
     <!-- END HEADER -->
     <!-- MAIN CONTENT -->
     <div class="showrec-wrapper">
         <h1 class="showrec-header">
-             List of Users
+            List of Users
         </h1>
 
         <div class="sr-filter">
             <fieldset>
                 <div class="sr-filter-content">
-                    <form action="">
+                    <form method="get" action="@Url.Action("RecordList", "Admin")">
                         <div class="empid-div">
-                            <label for="empid">
-                                Employee Id:
-                            </label>
-                            <input type="text" class="emp-input-id">
+                            <label for="empid">Employee Id:</label>
+                            <input type="text" name="EmpId" class="emp-input-id" value="@ViewData["EmpId"]">
                         </div>
-                        <br>
+                        <br />
                         Month:
-                        <select name="month" id="">
+                        <select name="month" id="month">
                             <option value="all">All</option>
                             <option value="1">Jan</option>
                             <option value="2">Feb</option>
@@ -44,31 +41,32 @@
                         </select>
 
                         Day:
-                        <select name="day" id="">
+                        <select name="day" id="day">
                             <option value="all">All</option>
                             <!-- Loop to generate 1-31 -->
                             <script>
                                 for (let i = 1; i <= 31; i++) {
-                                document.write(`<option value="${i}">${i}</option>`);
+                                    document.write('<option value="' + i + '">' + i + '</option>');
                                 }
                             </script>
                         </select>
 
                         Year:
-                        <select name="year" id="">
+                        <select name="year" id="year">
                             <!-- Loop to generate years 2025-2030 -->
                             <script>
                                 for (let i = 2025; i <= 2030; i++) {
-                                document.write(`<option value="${i}">${i}</option>`);
+                                    document.write('<option value="' + i + '">' + i + '</option>');
                                 }
                             </script>
                         </select>
 
-                        <input type="submit" class="find-id-btn" value="Search">
+                        <input type="submit" class="find-id-btn" value="Search" />
                     </form>
                 </div>
             </fieldset>
         </div>
+
 
         <div class="sr-addtime-div">
             <button class="sr-addtime-btn" id="sr-addtime">
@@ -80,7 +78,7 @@
             <table class="sr-table">
                 <thead>
                     <tr>
-                        <th><span class="emp-id-table">Id</span></th>
+                        <th><span class="emp-id-table">EmployeeId</span></th>
                         <th>Date</th>
                         <th>Time In</th>
                         <th>Time Out</th>
@@ -89,26 +87,54 @@
                     </tr>
 
                 </thead>
+
                 <tbody>
+                    @foreach (var item in Model)
+                    {
                         <tr>
-                            <td>01</td>
-                            <td>01/06/2025</td>
-                            <td>09:00</td>
-                            <td>01:03</td>
-                            <td>04:03</td>
+                            <td>@item.EmpId</td>
+                            <td>@item.LogDate.ToString("MM/dd/yyyy")</td>
+                            <td>@item.TimeIN?.ToString("HH:mm")</td>
+                            <td>@item.TimeOUT?.ToString("HH:mm")</td>
+                            <td>@item.Total?.ToString("F2")</td>
                             <td>
                                 <div class="rec-btn-div">
-                                    <button class="view-rec-btn">view</button>
-                                    <button class="edit-rec-btn">edit</button>
-                                    <button class="del-rec-btn delete-btn">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
+                                    <button class="view-rec-btn"
+                                            data-id="@item.Id"
+                                            data-empid="@item.EmpId"
+                                            data-employeename="@item.EmployeeName"
+                                            data-logdate="@item.LogDate.ToString("yyyy-MM-dd")"
+                                            data-timein="@item.TimeIN?.ToString("HH:mm")"
+                                            data-timeout="@item.TimeOUT?.ToString("HH:mm")"
+                                            data-total="@item.Total?.ToString("F2")"
+                                            data-statusid="@item.StatusID"
+                                            data-statusdescription="@item.StatusDescription">
+                                        View
+                                    </button>
+                                    <button class="edit-rec-btn"
+                                            data-id="@item.Id"
+                                            data-empid="@item.EmpId"
+                                            data-employeename="@item.EmployeeName"
+                                            data-logdate="@item.LogDate.ToString("yyyy-MM-dd")"
+                                            data-timein="@item.TimeIN?.ToString("HH:mm")"
+                                            data-timeout="@item.TimeOUT?.ToString("HH:mm")"
+                                            data-statusid="@item.StatusID">
+                                        Edit
+                                    </button>
+                                    <button class="del-rec-btn delete-btn"
+                                            data-id="@item.Id"
+                                            data-employeename="@item.EmployeeName"
+                                            data-logdate="@item.LogDate.ToString("yyyy-MM-dd")"
+                                            data-timein="@item.TimeIN?.ToString("HH:mm")"
+                                            data-timeout="@item.TimeOUT?.ToString("HH:mm")">
+                                        <span class="material-symbols-outlined">delete</span>
                                     </button>
                                 </div>
                             </td>
                         </tr>
+                    }
                 </tbody>
+
             </table>
         </div>
     </div>
@@ -121,17 +147,18 @@
 <div id="viewModal" class="viewmodal">
     <div class="view-modal-content">
         <span class="close">&times;</span>
-        <h2>Juan Dela Cruz</h2>
+        <h2 class="vp-employeename"></h2>
         <h3>Date</h3>
-        <p>01/06/2025</p>
+        <p class="vp-logdate"></p>
         <h3>Time In</h3>
-        <p>09:00</p>
+        <p class="vp-timein"></p>
         <h3>Time Out</h3>
-        <p>01:03</p>
+        <p class="vp-timeout"></p>
         <h3>Total Hours</h3>
-        <p>04:03</p>
+        <p class="vp-total"></p>
         <h3>Status</h3>
-        <p class="view-status">Approved</p>
+        <p class="vp-statusdescription"></p>
+        <p class="vp-id" hidden></p>
     </div>
 </div>
 
@@ -141,56 +168,53 @@
     <div class="ed-modal-content">
         <span class="close">&times;</span>
         <h2>Edit Time Record</h2>
-        <form action="">
-            <label for="employeename" class="er-empname">
-                Juan Dela Cruz
-            </label>
-            <label for="date">Date</label>
-            <p class="ti-date">01/06/2025</p>
+        <form id="editForm" method="post">
+            <input type="hidden" id="editId" name="Id" />
+            <p class="er-empname" id="editempname"></p>
+            <p for="date" id="editLogDate">Date</p>
+            <p class="ti-date" id="editLogDate"></p>
             <div class="edit-timein">
                 <label for="timein">Time In <span class="ti-guide">(hh:mm)</span></label>
-                <input type="number" min="0" max="24" placeholder="hh">
-                :
-                <input type="number" min="0" max="24" placeholder="mm">
+                <input type="time" id="editTimeIn" name="TimeIN" />
             </div>
 
             <div class="edit-timeout">
                 <label for="timein">Time Out <span class="ti-guide">(hh:mm)</span></label>
-                <input type="number" min="0" max="24" placeholder="hh">
-                :
-                <input type="number" min="0" max="24" placeholder="mm">
+                <input type="time" id="editTimeOut" name="TimeOUT" />
             </div>
 
             <div class="edit-status">
                 <label for="status">Status</label>
-                <select name="status" id="">
-                    <option value="">Approved</option>
-                    <option value="">Rejected</option>
-                    <option value="" selected>NA</option>
+                <select name="StatusID" id="editStatusId">
+                    @foreach (var stat in ViewBag.Status)
+                    {
+                        <option value="@stat.Id">@stat.StatusName</option>
+                    }
                 </select>
             </div>
-            <input type="submit">
+            <input type="submit" value="Save Changes" />
         </form>
     </div>
 </div>
 
+
 <!-- DELETE MODAL -->
 
-<div class="deleteModal" id="deleteModal">
+<div class="deleteModal" id="deleteModalRecord">
     <div class="delModalContent">
         <span class="close">&times;</span>
         <h1>Delete Record</h1>
         <h2>Are you sure you want to delete?</h2>
-        <h3>
-            Dela Cruz, Juan</h2>
-            <p>Date: 01/01/2000</p>
-            <p>Time In: 01:00</p>
-            <p>Time Out: 02:00</p>
+        <h3 class="del-rec-name">
+        </h3>
+        <p>Date: <span class="dec-rec-date"></span></p>
+        <p>Time In: <span class="del-rec-timein"></span></p>
+        <p>Time Out: <span class="del-rec-timeout"></span></p>
 
-            <div class="del-btn">
-                <input type="submit" value="Yes" class="del-confirm">
-                <button class="del-close">No</button>
-            </div>
+        <div class="del-btn">
+            <input type="submit" value="Yes" class="del-confirm-rec">
+            <button class="del-close">No</button>
+        </div>
     </div>
 </div>
 
@@ -199,45 +223,43 @@
     <div class="addmodal-content">
         <span class="close">&times;</span>
         <h2>Add Time to Employee</h2>
-        <form action="">
+        <form id="addTimeForm">
             <label for="employeeid">Select an Employee</label>
-            <select name="employeeid" id="">
-                <option value="">Employee One</option>
-                <option value="">Employee Two</option>
-                <option value="">Employee Three</option>
+            <select name="employeeid" id="employeeid">
+                @foreach (var e in ViewBag.Employee)
+                {
+                    <option value="@e.Id">@e.EmployeeName</option>
+                }
             </select>
 
             <label for="date">Date</label>
-            <input type="date">
+            <input type="date" id="logDate">
 
             <div class="add-timein">
                 <label for="timein">Time In <span class="ti-guide">(hh:mm)</span></label>
-                <input type="number" min="0" max="24" placeholder="hh">
-                :
-                <input type="number" min="0" max="24" placeholder="mm">
-            </div>=][]
-
-
-
+                <input type="time" id="timein">
+            </div>
 
             <div class="add-timeout">
-                <label for="timein">Time Out <span class="ti-guide">(hh:mm)</span></label>
-                <input type="number" min="0" max="24" placeholder="hh">
-                :
-                <input type="number" min="0" max="24" placeholder="mm">
+                <label for="timeout">Time Out <span class="ti-guide">(hh:mm)</span></label>
+                <input type="time" id="timeout">
             </div>
 
             <div class="add-status">
                 <label for="status">Status</label>
-                <select name="status" id="">
-                    <option value="">Approved</option>
-                    <option value="">Rejected</option>
-                    <option value="" selected>NA</option>
+                <select name="status" id="status">
+                    <option value="4" selected disabled>NA</option>
+                    @foreach (var stat in ViewBag.Status)
+                    {
+                        <option value="@stat.Id">@stat.StatusName</option>
+                    }
                 </select>
             </div>
 
-            <input type="submit">
+            <input type="submit" value="Add Time Log">
         </form>
     </div>
 </div>
+
+
 <!-- END ADD MODAL -->

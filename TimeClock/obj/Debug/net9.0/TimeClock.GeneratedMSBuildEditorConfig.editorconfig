@@ -17,69 +17,69 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TimeClock
 build_property.RootNamespace = TimeClock
-build_property.ProjectDir = C:\Users\manil\OneDrive\Documents\TimeClockProject\TimeClock\
+build_property.ProjectDir = C:\Users\manil\OneDrive\Desktop\TimeClockProject\TimeClockProject\TimeClock\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\manil\OneDrive\Documents\TimeClockProject\TimeClock
+build_property.MSBuildProjectDirectory = C:\Users\manil\OneDrive\Desktop\TimeClockProject\TimeClockProject\TimeClock
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/Admin/AddEmployee.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/Admin/AddEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/Admin/AddUser.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/Admin/AddUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkVXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/Admin/EmployeeList.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/Admin/EmployeeList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRW1wbG95ZWVMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/Admin/RecordList.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/Admin/RecordList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVjb3JkTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/Admin/UserList.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/Admin/UserList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlckxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/Employee/Index.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/Employee/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/Home/Index.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/Home/Privacy.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/Shared/Error.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/Shared/_HeaderNav.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/Shared/_HeaderNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXJOYXYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/_ViewImports.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/_ViewStart.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manil/OneDrive/Documents/TimeClockProject/TimeClock/Views/Shared/_Layout.cshtml]
+[C:/Users/manil/OneDrive/Desktop/TimeClockProject/TimeClockProject/TimeClock/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-v8ksju4q3y

@@ -1,339 +1,339 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TimeClock.bundle.scp.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TimeClock.bundle.scp.css",
       "PackagePath": "staticwebassets\\TimeClock.3rvf70lpgg.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\css\\styles.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\css\\styles.css",
       "PackagePath": "staticwebassets\\css\\styles.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\css\\styles.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\css\\styles.css.map",
       "PackagePath": "staticwebassets\\css\\styles.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\Banner xs.jpg",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\Banner xs.jpg",
       "PackagePath": "staticwebassets\\img\\Banner xs.jpg"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\banner-rest.jpg",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\banner-rest.jpg",
       "PackagePath": "staticwebassets\\img\\banner-rest.jpg"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\clock-in-btn.jpg",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\clock-in-btn.jpg",
       "PackagePath": "staticwebassets\\img\\clock-in-btn.jpg"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\clock-out-btn.jpg",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\clock-out-btn.jpg",
       "PackagePath": "staticwebassets\\img\\clock-out-btn.jpg"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\default-user.jpg",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\default-user.jpg",
       "PackagePath": "staticwebassets\\img\\default-user.jpg"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\ee-logo.png",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\ee-logo.png",
       "PackagePath": "staticwebassets\\img\\ee-logo.png"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\icons\\home-active.png",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\icons\\home-active.png",
       "PackagePath": "staticwebassets\\img\\icons\\home-active.png"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\icons\\home.png",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\icons\\home.png",
       "PackagePath": "staticwebassets\\img\\icons\\home.png"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\icons\\more-active.png",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\icons\\more-active.png",
       "PackagePath": "staticwebassets\\img\\icons\\more-active.png"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\icons\\more.png",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\icons\\more.png",
       "PackagePath": "staticwebassets\\img\\icons\\more.png"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\icons\\show-all-active.png",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\icons\\show-all-active.png",
       "PackagePath": "staticwebassets\\img\\icons\\show-all-active.png"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\icons\\show-all.png",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\icons\\show-all.png",
       "PackagePath": "staticwebassets\\img\\icons\\show-all.png"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\left-puzzle.png",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\left-puzzle.png",
       "PackagePath": "staticwebassets\\img\\left-puzzle.png"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\left-puzzle1.PNG",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\left-puzzle1.PNG",
       "PackagePath": "staticwebassets\\img\\left-puzzle1.PNG"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\right-puzzle.png",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\right-puzzle.png",
       "PackagePath": "staticwebassets\\img\\right-puzzle.png"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\right-puzzle1.png",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\right-puzzle1.png",
       "PackagePath": "staticwebassets\\img\\right-puzzle1.png"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\sample-pfp.JPG",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\sample-pfp.JPG",
       "PackagePath": "staticwebassets\\img\\sample-pfp.JPG"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\img\\sample-pfp2.jpg",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\img\\sample-pfp2.jpg",
       "PackagePath": "staticwebassets\\img\\sample-pfp2.jpg"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\js\\moreNav.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\js\\moreNav.js",
       "PackagePath": "staticwebassets\\js\\moreNav.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\js\\rtclock.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\js\\rtclock.js",
       "PackagePath": "staticwebassets\\js\\rtclock.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\js\\timeModal.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\js\\timeModal.js",
       "PackagePath": "staticwebassets\\js\\timeModal.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

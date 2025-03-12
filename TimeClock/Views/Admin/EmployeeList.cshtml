@@ -47,7 +47,7 @@
                                     </button>
                                 </div>
                                 <div class="el-del-container">
-                                    <button class="el-del-btn delete-btn"
+                                    <button class="el-del-btn delete-btn-rec"
                                             data-id="@item.Id"
                                             data-firstname="@item.FirstName"
                                             data-lastname="@item.LastName">
@@ -154,7 +154,7 @@
 
 
 <!-- DELETE MODAL -->
-<div class="deleteModal" id="deleteModal">
+<div class="deleteModal" id="deleteModalRecord">
     <div class="delModalContent">
         <span class="close">&times;</span>
         <h1>Delete Employee</h1>
@@ -162,7 +162,7 @@
         <h2 class="del-empname"></h2>
 
         <div class="del-btn">
-            <input type="submit" value="Yes" class="del-confirm">
+            <input type="submit" value="Yes" class="del-confirm-record">
             <button class="del-close">No</button>
         </div>
     </div>

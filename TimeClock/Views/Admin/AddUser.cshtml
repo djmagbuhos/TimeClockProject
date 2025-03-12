@@ -1,7 +1,8 @@
-﻿@model IEnumerable<TimeClock.ViewModel.VMEmployee>
+﻿@model IEnumerable<TimeClock.ViewModel.VMRoles>
+
 
 <div class="body-wrapper-admin">
-    
+
     @await Html.PartialAsync("_HeaderNav")
 
     <!-- END HEADER -->
@@ -11,24 +12,29 @@
             Add User
         </h1>
         <fieldset>
-            <form action="">
-                <label for="empnumber" class="enlabel">Employee Number: </label>
-                <input type="number" class="addemp-inputtx">
+            <form id="addUserForm">
+                <label for="empnumber">Employee Number: </label>
+                <input type="number" id="empnumber" class="addemp-inputtx" required>
+
                 <label for="username">Username: </label>
-                <input type="text" class="addemp-inputtx">
-                <label for="password">Password </label>
-                <input type="password" class="addemp-inputtx">
-                <label for="con_password">Confirm Password </label>
-                <input type="password" class="addemp-inputtx">
+                <input type="text" id="username" class="addemp-inputtx" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" class="addemp-inputtx" required>
+
                 <label for="email">Email</label>
-                <input type="email" class="addemp-inputtx">
-                <label for="role">Role</label>
-                <select name="role" id="">
-                    <option value="admin">Admin</option>
-                    <option value="employee">Employee</option>
+                <input type="email" id="email" class="addemp-inputtx" required>
+
+                <label for="RoleId">Role</label>
+                <select id="RoleId" class="addemp-inputtx">
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item.Id">@item.description</option>
+                    }
                 </select>
+
                 <div class="ae-submit-div">
-                    <input type="submit" class="ae-submit">
+                    <button type="button" id="btnSubmit" class="ae-submit">Add User</button>
                 </div>
             </form>
         </fieldset>
@@ -40,3 +46,32 @@
 <footer class="ml-footer">
     <p>&copy; 2024 - Everyeight Company - <a href="#">Contact Us</a></p>
 </footer>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+            var userData = {
+                EmpId: $("#empnumber").val(),
+                UserName: $("#username").val(),
+                PasswordHash: $("#password").val(),
+                Email: $("#email").val(),
+                RoleId: $("#RoleId").val()
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "/Admin/AddUser",
+                data: JSON.stringify(userData),
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    alert("User added successfully!");
+                    window.location.href = "/Admin/UserList"; // Redirect after success
+                },
+                error: function (xhr) {
+                    alert("Error adding user: " + xhr.responseText);
+                }
+            });
+        });
+    });
+</script>

@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>7iinz79pyc</Fingerprint>
-      <Integrity>bww68iRgWGNgfnAxYAdd7aMqtkkpRiBN6lr5T5Fe7g4=</Integrity>
+      <Fingerprint>lrafi86a82</Fingerprint>
+      <Integrity>v8lp5zr6u9Xya9Oqvx6QONw8VYvyXtwl2kOcTPMIuP4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styles.css'))</OriginalItemSpec>
@@ -462,8 +462,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>gll2yti1hc</Fingerprint>
-      <Integrity>1C/8nTFZEipQxdo8FdVxuiDSHdItaINkRtEOQiZX1fs=</Integrity>
+      <Fingerprint>ihw5o38n7p</Fingerprint>
+      <Integrity>tncGRJ8iPR8kx7lcmcQZMoSmnNOFGJGb1ShoFTOjhsA=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\timeModal.js'))</OriginalItemSpec>

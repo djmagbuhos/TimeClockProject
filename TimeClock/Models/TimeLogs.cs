@@ -21,10 +21,9 @@ namespace TimeClock.Models
         [ForeignKey("Status")]
         public int? StatusID { get; set; }
 
-        public decimal? TotalHours => (TimeIN != null && TimeOUT != null)
+        public decimal? Total => (TimeIN != null && TimeOUT != null)
             ? (decimal?)(TimeOUT - TimeIN).Value.TotalHours
             : null;
 
-        public decimal? Total { get; internal set; }
     }
 }

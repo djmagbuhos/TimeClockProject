@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vDtAuMIyrM4=",
+  "dgSpecHash": "WHXQW+2n6t8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\manil\\OneDrive\\Documents\\TimeClockProject\\TimeClock\\TimeClock.csproj",
+  "projectFilePath": "C:\\Users\\manil\\OneDrive\\Desktop\\TimeClockProject\\TimeClockProject\\TimeClock\\TimeClock.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\manil\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\manil\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
