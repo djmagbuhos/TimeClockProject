@@ -33,8 +33,8 @@ class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
-
-
+        builder.Services.AddDistributedMemoryCache(); // Required for session state
+        builder.Services.AddSession(); // Enables session support
         builder.Services.AddMemoryCache();
 
         builder.Services.AddScoped<IDataAccessService, DataAccessService>();
@@ -56,6 +56,7 @@ class Program
         app.UseRouting();
 
         app.UseAuthorization();
+        app.UseSession();
 
         app.MapControllerRoute(
             name: "default",

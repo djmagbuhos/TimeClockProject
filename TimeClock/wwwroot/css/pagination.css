@@ -1,0 +1,107 @@
+﻿.pagination-recordlist {
+    text-align: center;
+    margin-top: auto; /* Pushes it to the bottom */
+    padding: 10px 0; /* Add spacing */
+}
+
+    .pagination-recordlist a {
+        margin-top: 2em !important;
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        margin: 0 4px;
+        border-radius: 4px;
+    }
+
+        .pagination-recordlist a.active {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff;
+        }
+
+        .pagination-recordlist a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+
+
+.pagination-employeelist {
+    text-align: center;
+    margin-top: auto; /* Pushes it to the bottom */
+    padding: 10px 0; /* Add spacing */
+}
+
+    .pagination-employeelist a {
+        margin-top: 2em !important;
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        margin: 0 4px;
+        border-radius: 4px;
+    }
+
+        .pagination-employeelist a.active {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff;
+        }
+
+        .pagination-employeelist a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+
+.pagination-userlist {
+    text-align: center;
+    margin-top: auto; /* Pushes it to the bottom */
+    padding: 10px 0; /* Add spacing */
+}
+
+    .pagination-userlist a {
+        margin-top: 2em !important;
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        margin: 0 4px;
+        border-radius: 4px;
+    }
+
+        .pagination-userlist a.active {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff;
+        }
+
+        .pagination-userlist a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+
+.pagination-emprecord {
+    text-align: center;
+    margin-top: auto; /* Pushes it to the bottom */
+    padding: 10px 0; /* Add spacing */
+}
+
+    .pagination-emprecord a {
+        margin-top: 2em !important;
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        margin: 0 4px;
+        border-radius: 4px;
+    }
+
+        .pagination-emprecord a.active {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff;
+        }
+
+        .pagination-emprecord a:hover:not(.active) {
+            background-color: #ddd;
+        }

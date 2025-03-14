@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using TimeClock.Models;
 using TimeClock.ViewModel;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace TimeClock.Services
 {
@@ -21,6 +23,9 @@ namespace TimeClock.Services
         Task<List<VMUsers>> GetAllUsersAsync();
         Task<VMUsers> GetAllUsersByIdAsync(int Id);
         Task<VMUsers> AddUsersAsync(VMUsers model);
+        Task<VMUsers> UpdateUsersAsync(VMUsers model);
+
+        Task<bool> DeleteUsersAsync(int Id);
         //--------------------------------------------//
 
         //------------------TIMELOGS-----------------//
@@ -47,6 +52,19 @@ namespace TimeClock.Services
         Task<VMRoles> GetAllRolesByIdAsync(int Id);
         //--------------------------------------------//
 
+
+        //-------------HOMEPAGE----------------------//
+        Task<VMUsers?> ValidateUserAsync(string username, string password);
+        Task<TimeLogs?> GetActiveClockIn(int empId);
+        Task UpdateClockOut(TimeLogs timeLog);
+        Task<List<VMTimeLogs>> GetTodaysLogsAsync(int empId);
+
+
+
+
+        //------------EMPLOYEE SIDE------------------//
+        Task<IEnumerable<VMTimeLogs>> GetTimeLogsByEmployeeIdAsync(int empId);
+        Task<IEnumerable<VMTimeLogs>> GetFilteredTimeLogsAsync(int empId, int? month, int? day, int? year);
     }
 
     public class DataAccessService : IDataAccessService
@@ -106,16 +124,27 @@ namespace TimeClock.Services
 
         public async Task<bool> DeleteEmployeeAsync(int Id)
         {
-            int result = 0;
-            var data = await _context.Employee.FindAsync(Id);
-            if (data != null)
+            try
             {
-                var deleteResult = _context.Employee.Remove(data);
-                result = await _context.SaveChangesAsync();
-            }
+                var data = await _context.Employee.FindAsync(Id);
+                if (data == null)
+                {
+                    Console.WriteLine("Employee not found: " + Id);
+                    return false;
+                }
 
-            return (result > 0);
+                _context.Employee.Remove(data);
+                int result = await _context.SaveChangesAsync();
+
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error deleting employee: " + ex.Message);
+                return false;
+            }
         }
+
 
 
         [HttpPost]
@@ -196,7 +225,8 @@ namespace TimeClock.Services
 
         public async Task<VMUsers> GetAllUsersByIdAsync(int Id)
         {
-            var data = await _context.Users.Where(x => x.Id == Id)
+            var data = await _context.Users
+                .Where(x => x.Id == Id)
                 .Select(u => new VMUsers()
                 {
                     Id = u.Id,
@@ -205,9 +235,17 @@ namespace TimeClock.Services
                     UserName = u.UserName,
                     CreatedAt = u.CreatedAt,
                     PasswordHash = u.PasswordHash
-                }
-                )
+                })
                 .SingleOrDefaultAsync();
+
+            if (data == null)
+            {
+                Console.WriteLine($"No user found with ID: {Id}");
+            }
+            else
+            {
+                Console.WriteLine($"User found: {data.Email}");
+            }
 
             return data;
         }
@@ -218,35 +256,71 @@ namespace TimeClock.Services
             var data = await _context.Users.FindAsync(Id);
             if (data != null)
             {
-                var deleteResult = _context.Users.Remove(data);
+                _context.Users.Remove(data);
                 result = await _context.SaveChangesAsync();
             }
 
             return (result > 0);
-
         }
 
 
         public async Task<VMUsers> UpdateUsersAsync(VMUsers model)
         {
-            var data = new Users()
-            {
-                RoleId = model.RoleId,
-                EmpId = model.EmpId,
-                UserName = model.UserName,
-                PasswordHash = model.PasswordHash,
-                Email = model.Email,
-                CreatedAt = DateTime.Now
-            };
-            _context.Users.Update(data);
-            await _context.SaveChangesAsync();
+            //var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Id == model.Id);
 
-            return model;
+            var existingUser = await _context.Users.Where(u => u.Id == model.Id).FirstOrDefaultAsync();
+            if (existingUser == null)
+            {
+                return null; // Return null kung walang user na nahanap
+            }
+
+            var role = await _context.Roles.Where(r => r.Id == model.RoleId).FirstOrDefaultAsync();
+            if (role != null)
+            {
+                existingUser.RoleId = role.Id;
+                existingUser.Email = model.Email;
+
+                _context.Users.Update(existingUser);
+                await _context.SaveChangesAsync();
+
+                return model;
+            }
+
+            return null;
         }
 
-        [HttpPost]
+
+
         public async Task<VMUsers> AddUsersAsync(VMUsers model)
         {
+            // Check if the employee exists in the Employee table
+            var existingEmployee = await _context.Employee.FirstOrDefaultAsync(e => e.Id == model.EmpId);
+            if (existingEmployee == null)
+            {
+                throw new InvalidOperationException("Unable to create account. This Employee ID does not exist.");
+            }
+
+            // Check if EmpId already has a user
+            var existingEmpId = await _context.Users.FirstOrDefaultAsync(u => u.EmpId == model.EmpId);
+            if (existingEmpId != null)
+            {
+                throw new InvalidOperationException($"An account already exists for Employee ID {model.EmpId}.");
+            }
+
+            // Check if UserName already exists
+            var existingUserName = await _context.Users.FirstOrDefaultAsync(u => u.UserName == model.UserName);
+            if (existingUserName != null)
+            {
+                throw new InvalidOperationException($"Username '{model.UserName}' is already taken. Please choose another one.");
+            }
+
+            // Check if Email already exists
+            var existingEmail = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
+            if (existingEmail != null)
+            {
+                throw new InvalidOperationException($"Email '{model.Email}' is already registered. Use a different email.");
+            }
+
             var data = new Users()
             {
                 RoleId = model.RoleId,
@@ -263,6 +337,7 @@ namespace TimeClock.Services
 
             return model;
         }
+
 
         //-------------------------END USER------------------------------------//
         //---------------------------------------------------------------------//
@@ -299,6 +374,7 @@ namespace TimeClock.Services
 
             var data = await query
                 .OrderBy(t => t.LogDate)
+                .ThenBy(t => t.TimeIN)
                 .Select(t => new VMTimeLogs()
                 {
                     Id = t.Id,
@@ -487,6 +563,130 @@ namespace TimeClock.Services
         }
         //----------------------------END ROLES--------------------------------//
         //---------------------------------------------------------------------//
+
+
+        //--------------------------HOMEPAGE----------------------------------//
+        public async Task<List<VMTimeLogs>> GetTodaysLogsAsync(int empId)
+        {
+            var today = DateTime.Today;
+
+            var logs = await _context.TimeLogs
+                .Where(t => t.EmpId == empId && t.LogDate == today)
+                .Select(t => new VMTimeLogs
+                {
+                    LogDate = t.LogDate,
+                    TimeIN = t.TimeIN,
+                    TimeOUT = t.TimeOUT,
+                    Total = t.TimeOUT.HasValue && t.TimeIN.HasValue
+                        ? (decimal?)Math.Round((decimal)(t.TimeOUT.Value - t.TimeIN.Value).TotalHours, 2)
+                        : null // Set null if no TimeOUT
+                })
+                .ToListAsync();
+
+            // Format date/time in memory
+            logs.ForEach(t =>
+            {
+                t.DateFormatted = t.LogDate.ToString("yyyy-MM-dd");
+                t.TimeInFormatted = t.TimeIN.HasValue ? t.TimeIN.Value.ToString("HH:mm:ss") : "";
+                t.TimeOutFormatted = t.TimeOUT.HasValue ? t.TimeOUT.Value.ToString("HH:mm:ss") : "";
+            });
+
+            return logs ?? new List<VMTimeLogs>();  // Ensure it never returns null
+        }
+
+
+        public async Task<VMUsers?> ValidateUserAsync(string username, string password)
+        {
+            // Hash the input password before comparison
+            string hashedPassword = HashPassword(password);
+
+            var user = await (from u in _context.Users
+                              join e in _context.Employee on u.EmpId equals e.Id
+                              join p in _context.Position on e.PositionID equals p.Id
+                              where u.UserName == username && u.PasswordHash == hashedPassword
+                              select new VMUsers
+                              {
+                                  EmpId = u.EmpId,
+                                  RoleId = (int)u.RoleId,
+                                  EmployeeName = e.FirstName + " " + e.LastName,
+                                  PositionName = p.description 
+                              }).FirstOrDefaultAsync();
+
+            return user;
+        }
+
+
+        // Reuse the same HashPassword function as in AdminController
+        private static string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashBytes = sha256.ComputeHash(bytes);
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+            }
+        }
+
+        public async Task<TimeLogs?> GetActiveClockIn(int empId)
+        {
+            return await _context.TimeLogs
+                .Where(t => t.EmpId == empId && t.LogDate == DateTime.Today && t.TimeOUT == null)
+                .FirstOrDefaultAsync();
+        }
+
+        public async Task UpdateClockOut(TimeLogs timeLog)
+        {
+            _context.TimeLogs.Update(timeLog);
+            await _context.SaveChangesAsync();
+        }
+
+
+        //-----------------EMPLOYEE LOGIN SIDE--------------------------//
+        public async Task<IEnumerable<VMTimeLogs>> GetTimeLogsByEmployeeIdAsync(int empId)
+        {
+            return await _context.TimeLogs
+                .Where(t => t.EmpId == empId)
+                .OrderBy(t => t.LogDate)
+                .ThenBy(t => t.TimeIN)
+                .Select(t => new VMTimeLogs()
+                {
+                    LogDate = t.LogDate,
+                    TimeIN = t.TimeIN,
+                    TimeOUT = t.TimeOUT,
+                    Total = t.TimeOUT != null && t.TimeIN != null
+                        ? (decimal)(t.TimeOUT.Value - t.TimeIN.Value).TotalHours
+                        : 0 // If no TimeOUT, set to 0
+                })
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<VMTimeLogs>> GetFilteredTimeLogsAsync(int empId, int? month, int? day, int? year)
+        {
+            var query = _context.TimeLogs
+                .Where(t => t.EmpId == empId);
+
+            if (year.HasValue)
+                query = query.Where(t => t.LogDate.Year == year.Value);
+
+            if (month.HasValue && month.Value != 0)
+                query = query.Where(t => t.LogDate.Month == month.Value);
+
+            if (day.HasValue && day.Value != 0)
+                query = query.Where(t => t.LogDate.Day == day.Value);
+
+            return await query
+                .OrderByDescending(t => t.LogDate)
+                .Select(t => new VMTimeLogs
+                {
+                    LogDate = t.LogDate,
+                    TimeIN = t.TimeIN,
+                    TimeOUT = t.TimeOUT,
+                    Total = t.TimeOUT.HasValue && t.TimeIN.HasValue
+                        ? (decimal)(t.TimeOUT.Value - t.TimeIN.Value).TotalHours
+                        : 0
+                })
+                .ToListAsync();
+        }
 
 
     }

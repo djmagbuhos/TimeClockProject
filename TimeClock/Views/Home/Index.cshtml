@@ -1,4 +1,13 @@
-﻿<!-- HEADER -->
+﻿@model IEnumerable<TimeClock.ViewModel.VMTimeLogs>
+
+@if (TempData["AccessDenied"] != null)
+{
+    <script>
+        alert("@TempData["AccessDenied"]");
+    </script>
+}
+
+<!-- HEADER -->
 <div class="body-wrapper">
 
     @await Html.PartialAsync("_HeaderNav")
@@ -12,10 +21,10 @@
             <div class="real-time-clock"></div>
         </div>
         <div class="btn-div">
-            <button class="cico-btn">
+            <button class="cico-btn checkin-btn">
                 <img src="img/clock-in-btn.jpg" alt="clockin button" class="ci-btn">
             </button>
-            <button class="cico-btn">
+            <button class="cico-btn checkout-btn">
                 <img src="img/clock-out-btn.jpg" alt="clockout button" class="co-btn">
             </button>
         </div>
@@ -26,57 +35,90 @@
                 <span class="show-all-link"><a href="">Show all record</a></span>
             </div>
 
-            <div class="hc-main">
+
+            <div id="table-container">
                 <table class="hc-table">
-                    <tr>
-                        <th>Date</th>
-                        <th>Time In</th>
-                        <th>Time Out</th>
-                        <th>Total</th>
-                    </tr>
-
-                    <tr>
-                        <td>01/01/2000</td>
-                        <td>09:00:00</td>
-                        <td>13:00:00</td>
-                        <td>4</td>
-                    </tr>
-
-                    <tr>
-                        <td>01/01/2000</td>
-                        <td>14:00:00</td>
-                        <td>18:00:00</td>
-                        <td>4</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time In</th>
+                            <th>Time Out</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            foreach (var log in Model)
+                            {
+                                <tr>
+                                    <td>@log.LogDate.ToString("yyyy-MM-dd")</td>
+                                    <td>@(log.TimeIN?.ToString("HH:mm:ss") ?? "-")</td>
+                                    <td>@(log.TimeOUT?.ToString("HH:mm:ss") ?? "-")</td>
+                                    <td>@(log.Total?.ToString("0.00") ?? "-")</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="4" id="home-norec" id="emp-norecord">No Active Records</td>
+                            </tr>
+                        }
+                    </tbody>
                 </table>
             </div>
+
+
+
         </div>
     </div>
 
     <!-- END MAIN CONTENT -->
 </div>
 <!-- LOGIN MODAL -->
+<!-- CLOCK IN -->
 <div id="loginModal" class="home-modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Clock In Login</h2>
         <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username">
+        <input type="text" id="ci-username" placeholder="Enter your username">
         <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password">
-        <input type="submit" value="Login">
+        <input type="password" id="ci-password" placeholder="Enter your password">
+        <input type="submit" value="Login" id="login-btn">
     </div>
 </div>
 
+
+<!-- CLOCK OUT -->
 <div id="logoutModal" class="home-modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Clock Out Login</h2>
         <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username">
+        <input type="text" id="co-username" placeholder="Enter your username">
         <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password">
+        <input type="password" id="co-password" placeholder="Enter your password">
         <input type="submit" value="Login">
     </div>
 </div>
+
+
+<!-- NORMAL LOGIN NAV PART -->
+<div id="loginSiteModal" class="home-modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Account Login</h2>
+        <label for="username">Username</label>
+        <input type="text" id="site-username" placeholder="Enter your username">
+        <label for="password">Password</label>
+        <input type="password" id="site-password" placeholder="Enter your password">
+        <input type="submit" value="Login">
+    </div>
+</div>
+
+
 <!-- END LOGIN MODAL -->
+
+

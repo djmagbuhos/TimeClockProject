@@ -22,6 +22,9 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" class="addemp-inputtx" required>
 
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" class="addemp-inputtx" required>
+
                 <label for="email">Email</label>
                 <input type="email" id="email" class="addemp-inputtx" required>
 
@@ -51,10 +54,18 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $("#btnSubmit").click(function () {
+            var password = $("#password").val();
+            var confirmPassword = $("#confirm-password").val();
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+
             var userData = {
                 EmpId: $("#empnumber").val(),
                 UserName: $("#username").val(),
-                PasswordHash: $("#password").val(),
+                PasswordHash: password,
                 Email: $("#email").val(),
                 RoleId: $("#RoleId").val()
             };
@@ -65,13 +76,19 @@
                 data: JSON.stringify(userData),
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
-                    alert("User added successfully!");
+                    alert(response.message); // Display success message
                     window.location.href = "/Admin/UserList"; // Redirect after success
                 },
                 error: function (xhr) {
-                    alert("Error adding user: " + xhr.responseText);
+                    try {
+                        var response = JSON.parse(xhr.responseText);
+                        alert("Error adding user: " + response.message);
+                    } catch (e) {
+                        alert("Unexpected error. Please try again.");
+                    }
                 }
             });
         });
     });
+
 </script>

@@ -6,10 +6,9 @@ namespace TimeClock.ViewModel
 {
     public class VMUsers
     {
-
         public int Id { get; set; }
 
-        public int? EmpId { get; set; }
+        public int EmpId { get; set; }
 
         public string RoleName { get; set; }
         public int RoleId { get; set; }
@@ -17,6 +16,8 @@ namespace TimeClock.ViewModel
         [Required]
         [MaxLength(100)]
         public string EmployeeName { get; set; }
+
+        public string PositionName { get; set; }
 
         [Required]
         [MaxLength(50)]
@@ -31,6 +32,5 @@ namespace TimeClock.ViewModel
         public string Email { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-
     }
 }

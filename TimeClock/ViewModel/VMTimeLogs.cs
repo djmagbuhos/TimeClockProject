@@ -21,6 +21,9 @@ namespace TimeClock.ViewModel
 
         public string EmployeeName { get; set; }
         public string StatusDescription { get; set; }
+        public string DateFormatted { get; internal set; }
+        public string TimeInFormatted { get; internal set; }
+        public string TimeOutFormatted { get; internal set; }
     }
 
     public class EditTimeLogVM

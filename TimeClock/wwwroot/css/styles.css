@@ -238,6 +238,27 @@ body {
     margin-right: 1em;
 }
 
+.hc-table {
+        margin-top: 1em;
+        font-size: .8rem;
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+    }
+
+.hc-table th,
+.hc-table td {
+            border: 1px solid #ddd;
+            padding: 5px;
+            text-align: center;
+        }
+
+.hc-table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
     .home-wrapper .home-content .hc-header {
         display: flex;
         justify-content: space-between;
@@ -273,7 +294,7 @@ body {
         margin-top: 2em;
     }
 
-        .home-wrapper .home-content .hc-main .hc-table {
+/*        .home-wrapper .home-content .hc-main #table-container .hc-table {
             font-size: .8rem;
             width: 100%;
             border-collapse: collapse;
@@ -281,17 +302,17 @@ body {
             border: 1px solid #ccc;
         }
 
-            .home-wrapper .home-content .hc-main .hc-table th,
-            .home-wrapper .home-content .hc-main .hc-table td {
+            .home-wrapper .home-content .hc-main #table-container .hc-table th,
+            .home-wrapper .home-content .hc-main #table-container .hc-table td {
                 border: 1px solid #ddd;
                 padding: 5px;
                 text-align: center;
             }
 
-            .home-wrapper .home-content .hc-main .hc-table th {
+            .home-wrapper .home-content .hc-main #table-container .hc-table th {
                 background-color: #f4f4f4;
                 font-weight: bold;
-            }
+            }*/
 
 .more-opt-btn {
     border: none;
@@ -482,6 +503,7 @@ body {
     }
 
     .showrec-wrapper .sr-filter fieldset select {
+        margin-top: .7em;
         font-size: .75rem;
         width: 65px;
         padding: 0;
@@ -868,9 +890,45 @@ body {
 }
 
     .body-wrapper-admin .emplist-wrapper {
+        min-height: 85vh !important;
         width: 92%;
         margin: 0 auto;
     }
+
+
+.add-employeebtn-div {
+    margin-left: 5px;
+    margin-bottom: 1em;
+}
+
+    .add-employeebtn-div .add-employeebtn {
+        
+        text-align: center;
+        max-width: 250px;
+        border-radius: 40px;
+        background: #366a9d;
+        border: 2px solid #366a9d;
+        color: white;
+        letter-spacing: 1px;
+        text-shadow: 0;
+        align-items: center;
+        padding: 7px 15px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all .5s ease;
+        font-size: 1.2rem;
+    }
+
+        .add-employeebtn-div .add-employeebtn:hover {
+            color: white;
+            background: #4784BF;
+        }
+
+        .add-employeebtn-div .add-employeebtn:active {
+            letter-spacing: 2px;
+        }
+
+
 
         .body-wrapper-admin .emplist-wrapper .el-header {
             margin: 1.5rem 0px;
@@ -1270,6 +1328,39 @@ body {
     text-align: center;
 }
 
+.add-userbtn-div {
+    margin: auto;
+    width: 85%;
+    text-align: left;
+}
+
+    .add-userbtn-div .add-userbtn {
+        margin-top: 25px;
+        text-align: center;
+        max-width: 250px;
+        border-radius: 40px;
+        background: #366a9d;
+        border: 2px solid #366a9d;
+        color: white;
+        letter-spacing: 1px;
+        text-shadow: 0;
+        align-items: center;
+        padding: 7px 15px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all .5s ease;
+        font-size: 1.2rem;
+    }
+
+        .add-userbtn-div .add-userbtn:hover {
+            color: white;
+            background: #4784BF;
+        }
+
+        .add-userbtn-div .add-userbtn:active {
+            letter-spacing: 2px;
+        }
+
     .userlist-wrapper h1 {
         font-size: 2rem;
     }
@@ -1457,6 +1548,20 @@ body {
     justify-content: center;
 }
 
+.deleteModalEmployee {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .delModalContent {
     background: white;
     padding: 20px;
@@ -1503,6 +1608,17 @@ body {
         cursor: pointer;
         font-size: 1rem;
     }
+
+.del-confirm-employee {
+    width: 100px;
+    padding: 10px;
+    background-color: #bf1533;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+}
 
     .del-confirm-rec {
         width: 100px;
@@ -1719,13 +1835,14 @@ body {
 
     .nav-loggeduser {
         font-size: .8rem;
+        border-right: solid 1px black;
+        margin-right: 4px;
+        margin-left: 4px;
     }
 
-        .nav-loggeduser span {
-            border-right: solid 1px black;
-            margin-right: 4px;
-            margin-left: 4px;
-        }
+    .nav-userposition {
+        font-size: .8rem;
+    }
 
     .home-wrapper {
         margin-top: 0;
@@ -1754,13 +1871,24 @@ body {
         display: none;
     }
 
+    .sr-filter {
+        width: 80%;
+        margin: auto;
+        display: flex;
+    }
+
+    .sr-filter-content {
+        width: 100%;
+    }
+
     .sr-filter fieldset {
+        width: 100%;
         display: flex;
         justify-content: center;
     }
 
         .sr-filter fieldset select {
-            margin-right: .25em;
+            margin-top: .7rem;
         }
 
     .body-wrapper-admin {
@@ -1857,6 +1985,7 @@ body {
         }
 
         .emplist-wrapper .elist-container {
+            min-height: 70vh;
             width: 100%;
         }
 
@@ -1965,6 +2094,10 @@ body {
 }
 
 @media only screen and (min-width: 64em) {
+    .nav-li-admin {
+        margin-left: 1rem !important;
+    }
+
     .btn-div {
         gap: 0em !important;
         width: 80% !important;
@@ -1998,8 +2131,8 @@ body {
     }
 
     .sr-filter {
-        width: 80%;
-        margin: 0 auto;
+        width: 70%;
+        margin: auto;
     }
 
         .sr-filter fieldset {
@@ -2007,7 +2140,8 @@ body {
         }
 
             .sr-filter fieldset select {
-                margin-right: 3em;
+                margin-top: 0px !important;
+                margin-right: 2em;
                 margin-bottom: 2px;
             }
 

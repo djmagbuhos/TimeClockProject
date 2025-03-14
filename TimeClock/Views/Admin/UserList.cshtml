@@ -1,21 +1,23 @@
-﻿@model IEnumerable<TimeClock.ViewModel.VMEmployee>
+﻿@model IEnumerable<TimeClock.ViewModel.VMUsers>
 @{
     ViewData["Title"] = "Employee List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <div class="body-wrapper-admin">
-    
     @await Html.PartialAsync("_HeaderNav")
 
-<!-- END HEADER -->
-<!-- MAIN CONTENT -->
-
+    <!-- MAIN CONTENT -->
     <div class="userlist-wrapper">
-        <h1 class="userlist-header">
-            User List
-        </h1>
+        <h1 class="userlist-header">User List</h1>
+
+        <div class="add-userbtn-div">
+            <a asp-controller="Admin" asp-action="AddUser">
+                <button class="add-userbtn" id="add-userbtn">
+                    Add User
+                </button>
+            </a>
+        </div>
 
         <div class="userlist-container">
             <table>
@@ -28,121 +30,195 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-
                 <tbody>
-                    <tr>
-                        <td>10001</td>
-                        <td>Dela Cruz, Juan</td>
-                        <td>Admin</td>
-                        <td>testing@email.com</td>
-                        <td>
-                            <div class="userlist-btn-div">
-                                <button class="userlist-edit">edit</button>
-                                <button class="userlist-delete delete-btn">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>10001</td>
-                        <td>Dela Cruz, Juan</td>
-                        <td>Admin</td>
-                        <td>testing@email.com</td>
-                        <td>
-                            <div class="userlist-btn-div">
-                                <button class="userlist-edit">edit</button>
-                                <button class="userlist-delete  delete-btn">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>10001</td>
-                        <td>Dela Cruz, Juan</td>
-                        <td>Admin</td>
-                        <td>testing@email.com</td>
-                        <td>
-                            <div class="userlist-btn-div">
-                                <button class="userlist-edit">edit</button>
-                                <button class="userlist-delete  delete-btn">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>10001</td>
-                        <td>Dela Cruz, Juan</td>
-                        <td>Admin</td>
-                        <td>testing@email.com</td>
-                        <td>
-                            <div class="userlist-btn-div">
-                                <button class="userlist-edit">edit</button>
-                                <button class="userlist-delete  delete-btn">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@user.EmpId</td>
+                            <td>@user.EmployeeName</td>
+                            <td>@user.RoleName</td>
+                            <td>@user.Email</td>
+                            <td>
+                                <div class="userlist-btn-div">
+                                    <button class="userlist-edit"
+                                            data-userid="@user.Id"
+                                            data-name="@user.EmployeeName"
+                                            data-roleid="@user.RoleId"
+                                            data-role="@user.RoleName"
+                                            data-email="@user.Email">
+                                        Edit
+                                    </button>
+                                    <button class="userlist-delete delete-btn">
+                                        <span class="material-symbols-outlined">delete</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- MODAL -->
+    <div class="pagination-userlist">
+        @if (ViewBag.CurrentPage > 1)
+        {
+            <a asp-controller="Admin" asp-action="UserList" asp-route-page="@(ViewBag.CurrentPage - 1)">Previous</a>
+        }
+
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <a asp-controller="Admin" asp-action="UserList" asp-route-page="@i"
+               class="@(ViewBag.CurrentPage == i ? "active" : "")">
+                @i
+            </a>
+        }
+
+        @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+        {
+            <a asp-controller="Admin" asp-action="UserList" asp-route-page="@(ViewBag.CurrentPage + 1)">Next</a>
+        }
+    </div>
+
     <!-- EDIT USER MODAL -->
     <div class="edit-user-modal" id="edit-user-modal">
         <div class="edit-user-content">
             <span class="close">&times;</span>
             <h1>Edit User</h1>
-            <h2>Dela Cruz, Juan</h2>
-            <form action="">
+            <form id="edit-user-form">
+                <input type="hidden" id="userId" name="userId"> <!-- Hidden input for User ID -->
+
                 <label for="username">Username</label>
-                <input type="text" value="jdelacruz" disabled>
+                <input type="text" id="username" name="username" disabled>
+
                 <label for="role">Role</label>
-                <select name="role" id="">
-                    <option value="admin" selected disabled>Admin</option>
-                    <option value="admin">Admin</option>
-                    <option value="employee">Employee</option>
+                <select id="role" name="role">
+                    @foreach (var role in ViewBag.Roles)
+                    {
+                        <option value="@role.Id">@role.description</option>
+                    }
                 </select>
+
                 <label for="email">Email</label>
-                <input type="email">
-                <input type="submit" class="edit-user-submit">
+                <input type="email" id="email" name="email">
+
+                <button type="submit" class="edit-user-submit">Update</button>
             </form>
         </div>
     </div>
     <!-- END EDIT USER MODAL -->
-    <!-- DELETE CONF MODAL -->
-
-    <div class="deleteModal" id="deleteModal">
+    <!-- DELETE CONFIRMATION MODAL -->
+    <!-- DELETE CONFIRMATION MODAL -->
+    <div class="deleteModal" id="deleteModalUser">
         <div class="delModalContent">
             <span class="close">&times;</span>
             <h1>Delete User</h1>
             <h2>Are you sure you want to delete?</h2>
-            <p>Dela Cruz, Juan</p>
-
+            <p></p>
             <div class="del-btn">
-                <input type="submit" value="Yes" class="del-confirm">
+                <input type="submit" value="Yes" class="del-confirm" id="del-confirm-user">
                 <button class="del-close">No</button>
             </div>
         </div>
     </div>
-
-    <!-- END DELETE CONF MODAL -->
-
-<!-- END MAIN CONTENT -->
+    <!-- END DELETE CONFIRMATION MODAL -->
+    <!-- END DELETE CONFIRMATION MODAL -->
 </div>
 
+<script>
+       $(document).ready(function () {
+        // Open Edit Modal
+        $(document).on("click", ".userlist-edit", function () {
+            let userId = $(this).data("userid");
+            let name = $(this).data("name");
+            let role = $(this).data("role"); // Role description
+            let email = $(this).data("email");
+
+            $("#userId").val(userId);
+            $("#username").val(name);
+            $("#email").val(email);
+
+            // Set selected role
+            $("#role option").each(function () {
+                if ($(this).text().trim() === role.trim()) {
+                    $(this).prop("selected", true);
+                }
+            });
+
+            $("#edit-user-modal").fadeIn();
+        });
+
+        // Close Modal
+        $(document).on("click", ".close", function () {
+            $(".edit-user-modal").fadeOut();
+        });
+
+        // Handle Update User Form Submission
+        $("#edit-user-form").submit(function (e) {
+            e.preventDefault(); // Prevent page reload
+
+            let userId = $("#userId").val();
+            let role = $("#role").val();
+            let email = $("#email").val();
+
+            console.log("Updating User:", userId);
+            console.log("New Role:", role);
+            console.log("New Email:", email);
+
+            $.ajax({
+                type: "POST",
+                url: "/Admin/UpdateUser",
+                data: { userId: userId, role: role, email: email },
+                success: function (response) {
+                    alert("User updated successfully!");
+                    location.reload(); // Refresh page to reflect changes
+                },
+                error: function (error) {
+                    alert("Error updating user.");
+                    console.error(error);
+                }
+            });
+        });
+
+        // ========================== DELETE USER FUNCTION ========================== //
+        let userIdToDelete = null;
+
+        // Open Delete Modal
+           $(document).on("click", ".userlist-delete", function () {
+        userIdToDelete = $(this).closest("tr").find(".userlist-edit").data("userid"); // Get User ID properly
+        console.log("User ID to delete:", userIdToDelete); // Debugging log
+        $("#deleteModalUser").fadeIn();
+    });
+
+
+        // Close Delete Modal
+        $(document).on("click", ".del-close, .close", function () {
+            $("#deleteModalUser").fadeOut();
+        });
+
+        // Confirm Delete User
+        $(document).on("click", "#del-confirm-user", function () {
+            if (!userIdToDelete) {
+                alert("Error: No user selected.");
+                return;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/Admin/DeleteUser",
+                data: { id: userIdToDelete },
+                success: function (response) {
+                    alert("User deleted successfully!");
+                    location.reload(); // Refresh page to remove user
+                },
+                error: function (error) {
+                    alert("Error deleting user.");
+                    console.error(error);
+                }
+            });
+
+            $("#deleteModalUser").fadeOut(); // Close modal after request
+        });
+    });
+
+</script>

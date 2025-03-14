@@ -1,4 +1,5 @@
-﻿@model IEnumerable<TimeClock.ViewModel.VMTimeLogs>
+﻿@using Azure.Core
+@model IEnumerable<TimeClock.ViewModel.VMTimeLogs>
 @{
     ViewData["Title"] = "Employee Records";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,7 +12,7 @@
     <!-- MAIN CONTENT -->
     <div class="showrec-wrapper">
         <h1 class="showrec-header">
-            List of Users
+            List of Time Records
         </h1>
 
         <div class="sr-filter">
@@ -23,45 +24,48 @@
                             <input type="text" name="EmpId" class="emp-input-id" value="@ViewData["EmpId"]">
                         </div>
                         <br />
-                        Month:
-                        <select name="month" id="month">
-                            <option value="all">All</option>
-                            <option value="1">Jan</option>
-                            <option value="2">Feb</option>
-                            <option value="3">Mar</option>
-                            <option value="4">Apr</option>
-                            <option value="5">May</option>
-                            <option value="6">Jun</option>
-                            <option value="7">Jul</option>
-                            <option value="8">Aug</option>
-                            <option value="9">Sep</option>
-                            <option value="10">Oct</option>
-                            <option value="11">Nov</option>
-                            <option value="12">Dec</option>
-                        </select>
 
-                        Day:
-                        <select name="day" id="day">
-                            <option value="all">All</option>
-                            <!-- Loop to generate 1-31 -->
-                            <script>
-                                for (let i = 1; i <= 31; i++) {
-                                    document.write('<option value="' + i + '">' + i + '</option>');
-                                }
-                            </script>
-                        </select>
+                        <div class="sr-fc-2">
+                            Month:
+                            <select name="month" id="month">
+                                <option value="all">All</option>
+                                <option value="1">Jan</option>
+                                <option value="2">Feb</option>
+                                <option value="3">Mar</option>
+                                <option value="4">Apr</option>
+                                <option value="5">May</option>
+                                <option value="6">Jun</option>
+                                <option value="7">Jul</option>
+                                <option value="8">Aug</option>
+                                <option value="9">Sep</option>
+                                <option value="10">Oct</option>
+                                <option value="11">Nov</option>
+                                <option value="12">Dec</option>
+                            </select>
 
-                        Year:
-                        <select name="year" id="year">
-                            <!-- Loop to generate years 2025-2030 -->
-                            <script>
-                                for (let i = 2025; i <= 2030; i++) {
-                                    document.write('<option value="' + i + '">' + i + '</option>');
-                                }
-                            </script>
-                        </select>
+                            Day:
+                            <select name="day" id="day">
+                                <option value="all">All</option>
+                                <!-- Loop to generate 1-31 -->
+                                <script>
+                                    for (let i = 1; i <= 31; i++) {
+                                        document.write('<option value="' + i + '">' + i + '</option>');
+                                    }
+                                </script>
+                            </select>
 
-                        <input type="submit" class="find-id-btn" value="Search" />
+                            Year:
+                            <select name="year" id="year">
+                                <!-- Loop to generate years 2025-2030 -->
+                                <script>
+                                    for (let i = 2025; i <= 2030; i++) {
+                                        document.write('<option value="' + i + '">' + i + '</option>');
+                                    }
+                                </script>
+                            </select>
+                            <input type="submit" class="find-id-btn" value="Search" />
+
+                        </div>
                     </form>
                 </div>
             </fieldset>
@@ -78,11 +82,12 @@
             <table class="sr-table">
                 <thead>
                     <tr>
-                        <th><span class="emp-id-table">EmployeeId</span></th>
+                        <th><span class="emp-id-table">Employee Id</span></th>
                         <th>Date</th>
                         <th>Time In</th>
                         <th>Time Out</th>
-                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Total</th> 
                         <th>Action</th>
                     </tr>
 
@@ -96,6 +101,7 @@
                             <td>@item.LogDate.ToString("MM/dd/yyyy")</td>
                             <td>@item.TimeIN?.ToString("HH:mm")</td>
                             <td>@item.TimeOUT?.ToString("HH:mm")</td>
+                            <td>@item.StatusDescription</td>
                             <td>@item.Total?.ToString("F2")</td>
                             <td>
                                 <div class="rec-btn-div">
@@ -136,9 +142,27 @@
                 </tbody>
 
             </table>
+
+            
         </div>
     </div>
+    <div class="pagination-recordlist">
+        @if (ViewBag.CurrentPage > 1)
+        {
+            <a href="@Url.Action("RecordList", new { EmpId = ViewData["EmpId"], month = Context.Request.Query["month"], day = Context.Request.Query["day"], year = Context.Request.Query["year"], page = ViewBag.CurrentPage - 1 })">Previous</a>
+        }
 
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <a href="@Url.Action("RecordList", new { EmpId = ViewData["EmpId"], month = Context.Request.Query["month"], day = Context.Request.Query["day"], year = Context.Request.Query["year"], page = i })"
+               class="@(i == ViewBag.CurrentPage ? "active" : "")">@i</a>
+        }
+
+        @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+        {
+            <a href="@Url.Action("RecordList", new { EmpId = ViewData["EmpId"], month = Context.Request.Query["month"], day = Context.Request.Query["day"], year = Context.Request.Query["year"], page = ViewBag.CurrentPage + 1 })">Next</a>
+        }
+    </div>
     <!-- END MAIN CONTENT -->
 </div>
 
@@ -258,6 +282,7 @@
 
             <input type="submit" value="Add Time Log">
         </form>
+
     </div>
 </div>
 

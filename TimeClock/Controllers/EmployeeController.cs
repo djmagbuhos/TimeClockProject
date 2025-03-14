@@ -22,11 +22,31 @@ namespace TimeClock.Controllers
         }
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int? month, int? day, int? year, int page = 1, int pageSize = 20)
         {
-            //var model = _dataAccessService.GetAllEmployeeAsync();
+            //------ACCESS VALIDATION-----//
+            int? roleId = HttpContext.Session.GetInt32("RoleId");
 
-            return View();
+            if (roleId == null || roleId != 2)
+            {
+                TempData["AccessDenied"] = "Access Denied! This page is for Employees only.";
+                return RedirectToAction("Index", "Home");
+            }
+            //-------END VALIDATION-------//
+
+            int empId = Convert.ToInt32(HttpContext.Session.GetInt32("EmpId")); // Get logged-in Employee ID
+
+            var timeLogs = await _dataAccessService.GetFilteredTimeLogsAsync(empId, month, day, year);
+
+            int totalRecords = timeLogs.Count();
+            var paginatedLogs = timeLogs.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
+
+            return View(paginatedLogs);
         }
+
+
     }
 }
